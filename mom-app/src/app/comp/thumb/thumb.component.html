@@ -1,4 +1,12 @@
+<!-- 
+    This handles loading of the image 
+    You could use a directive here if we used an image instead of a div background
+-->
+<img [src]="item.img_src" (load)="image_loaded=true" hidden>
 
-<div class="image-holder" [style.background-image]="'url(' + item.img_src + ')'">    
+<div *ngIf="image_loaded" class="thumb image-holder" [style.background-image]="'url(' + item.img_src + ')'">    
     {{ item.img_src }}
 </div>
+
+<!-- Loading Div spinner -->
+<div *ngIf="!image_loaded" class="thumb image-loading"></div>

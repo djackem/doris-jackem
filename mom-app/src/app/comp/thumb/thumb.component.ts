@@ -8,6 +8,7 @@ import { Item } from 'src/app/types/item';
 })
 export class ThumbComponent implements OnInit{
   @Input() item!: Item;
+  image_loaded: boolean=false;
   ngOnInit(){
     
   }

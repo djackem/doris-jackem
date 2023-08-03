@@ -1,1 +1,27 @@
-<app-search-result></app-search-result>
+<ng-template #load_screen>
+    <!-- This should be the same as what is in index.html -->
+    <div class="loading-screen">
+        <h3>Loading Config...</h3>
+        <div class="loader" style="margin-left:1rem;"></div>
+    </div>
+</ng-template>
+
+<div 
+    *ngIf="!itemService.loading; else load_screen"
+    id="content-layout"
+>
+    <nav id="top-nav">Nav</nav>
+    <nav id="side-nav">
+        <ul>
+            <li><a [routerLink]="['/home']">Home</a></li>
+            <li *ngFor="let cat of itemService.categories">
+                <a [routerLink]="['/category', cat]">{{ cat }}</a>
+            </li>
+        </ul>
+        <!-- <div *ngFor="let cat of " -->
+    </nav>
+    <div id="content">
+        <router-outlet></router-outlet>
+    </div>
+    <div id="footer">Footer</div>
+</div>

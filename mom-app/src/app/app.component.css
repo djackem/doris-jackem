@@ -1,0 +1,25 @@
+#content-layout{
+    display: grid;
+    grid-template-columns: 20% 1fr;
+    grid-template-rows: 100px 1fr 50px;
+    min-height: 100vh;
+    grid-template-areas: 
+    "n-top n-top"
+    "n-side content"
+    "foot foot";
+}
+#top-nav{
+    grid-area: n-top;
+    background-color: green;
+}
+#side-nav{
+    grid-area: n-side;
+    background-color: red;
+}
+#content{
+    grid-area: content;
+}
+#footer{
+    grid-area: foot;
+    background-color: grey;
+}

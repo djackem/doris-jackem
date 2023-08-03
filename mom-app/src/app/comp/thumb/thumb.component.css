@@ -1,6 +1,16 @@
-.image-holder{
+.thumb{
     height: 100%;
     width: 100%;
     background-position: center;
     background-size: cover;
+    background-color: #ccc;
+}
+
+.image-loading{
+    background-color: green;
+    text-align: center;
+}
+.image-loading::after{
+    content: "Loading...";
+    
 }

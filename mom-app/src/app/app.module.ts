@@ -7,12 +7,17 @@ import { AppComponent } from './app.component';
 import { SearchResultComponent } from './comp/search-result/search-result.component';
 import { ThumbComponent } from './comp/thumb/thumb.component';
 
+import { SplashComponent } from './comp/splash/splash.component';
+import { CategoryComponent } from './comp/category/category.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,   
     SearchResultComponent, 
-    ThumbComponent, 
+    ThumbComponent,
+    SplashComponent, 
+    CategoryComponent, 
   ],
   imports: [
     HttpClientModule,

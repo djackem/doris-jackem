@@ -2,11 +2,13 @@
     {
         "name": "test",
         "desc": "test item",
-        "img": "duck.jpg"
+        "img": "duck.jpg",
+        "category": "ducks"
     },
     {
         "name": "test 2",
         "desc": "test item 2",
-        "img": "tester.png"
+        "img": "tester.png",
+        "category": "nothing"
     }
 ]}

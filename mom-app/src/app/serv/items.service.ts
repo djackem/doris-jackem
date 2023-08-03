@@ -9,8 +9,10 @@ export class ItemsService {
   
   data: any = null;
   items: Item[] = [];
+  categories: any[] = [];
   url: string = './assets/config.json';
-  loading: boolean = false;
+
+  loading: boolean = true;
   loading_emitter: EventEmitter<boolean> = new EventEmitter();
   
   constructor( http: HttpClient ) { 
@@ -21,6 +23,7 @@ export class ItemsService {
         return;
       }else{        
         let id = 0;
+        let cats = new Set();
 
         // Build item array
         for (let item of this.data.items ){
@@ -32,19 +35,14 @@ export class ItemsService {
             img_src: `assets/img/${item.img}` || 'Missing',
             img_loaded: false
           }
+          cats.add( new_item.category );
           this.items.push( new_item );
         }
+        this.categories = Array(...cats);
         this.loading = false;
         this.loading_emitter.emit( true );
       }
-      // Load item images
-      /* let image_load_promises: Promise<number>[] = [];
-      for ( const item of this.items ){
-        this.LoadImage( item );
-      } */
-
-
-      console.log(this.items);
+      
     });
 
   }
