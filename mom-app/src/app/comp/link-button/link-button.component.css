@@ -1,0 +1,20 @@
+
+:host{ 
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+}
+
+/* Padding on container, not headers */
+h3{ margin: 0px; }
+.link-btn{
+    padding: 0.5rem;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    background-color: blue;
+}
+.link-btn:active{
+    background-color: green;
+}

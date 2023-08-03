@@ -9,6 +9,7 @@ import { ThumbComponent } from './comp/thumb/thumb.component';
 
 import { SplashComponent } from './comp/splash/splash.component';
 import { CategoryComponent } from './comp/category/category.component';
+import { LinkButtonComponent } from './comp/link-button/link-button.component';
 
 
 @NgModule({
@@ -17,7 +18,7 @@ import { CategoryComponent } from './comp/category/category.component';
     SearchResultComponent, 
     ThumbComponent,
     SplashComponent, 
-    CategoryComponent, 
+    CategoryComponent, LinkButtonComponent, 
   ],
   imports: [
     HttpClientModule,

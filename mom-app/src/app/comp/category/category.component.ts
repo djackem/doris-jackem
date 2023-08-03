@@ -9,9 +9,8 @@ import { filter } from 'rxjs';
 })
 export class CategoryComponent implements OnInit{
   constructor( private route: ActivatedRoute,  private router: Router ) {
-    this.router.events.pipe(
-      filter( e=> e instanceof NavigationEnd )
-    ).subscribe( e =>{
+    this.router.events.pipe( filter( e => e instanceof NavigationEnd ) )
+    .subscribe( e =>{
       this.GetCategory();
     })
   }

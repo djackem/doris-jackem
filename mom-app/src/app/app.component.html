@@ -6,19 +6,14 @@
     </div>
 </ng-template>
 
-<div 
-    *ngIf="!itemService.loading; else load_screen"
-    id="content-layout"
->
+<div *ngIf="!itemService.loading; else load_screen" id="content-layout">
     <nav id="top-nav">Nav</nav>
     <nav id="side-nav">
-        <ul>
-            <li><a [routerLink]="['/home']">Home</a></li>
-            <li *ngFor="let cat of itemService.categories">
-                <a [routerLink]="['/category', cat]">{{ cat }}</a>
-            </li>
-        </ul>
-        <!-- <div *ngFor="let cat of " -->
+        <app-link-button [routerLink]="['/home']" [text]="'home'"></app-link-button>
+        <app-link-button *ngFor="let cat of itemService.categories"
+            [routerLink]="['/category', cat]" 
+            [text]="cat"
+        ></app-link-button>
     </nav>
     <div id="content">
         <router-outlet></router-outlet>

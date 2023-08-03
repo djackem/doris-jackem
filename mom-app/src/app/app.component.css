@@ -1,4 +1,5 @@
-#content-layout{
+/* Desktop */
+#content-layout{    
     display: grid;
     grid-template-columns: 20% 1fr;
     grid-template-rows: 100px 1fr 50px;
@@ -8,6 +9,25 @@
     "n-side content"
     "foot foot";
 }
+
+/* Mobile */
+@media only screen and (max-width: 600px) {
+    #content-layout{
+        grid-template-columns: 1fr;
+        grid-template-rows: 100px min-content 1fr 50px;
+        grid-template-areas:
+        "n-top n-top"
+        "n-side n-side"
+        "content content"
+        "foot foot";
+    }
+    #side-nav{
+        flex-direction: row !important;
+        justify-content: center !important;
+        flex-wrap: wrap;
+    }
+}
+
 #top-nav{
     grid-area: n-top;
     background-color: green;
@@ -15,6 +35,11 @@
 #side-nav{
     grid-area: n-side;
     background-color: red;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 0.5rem;
+    padding: 1rem;
+    justify-content: flex-start;
 }
 #content{
     grid-area: content;
@@ -23,3 +48,4 @@
     grid-area: foot;
     background-color: grey;
 }
+
