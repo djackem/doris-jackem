@@ -1,0 +1,12 @@
+{"items": [
+    {
+        "name": "test",
+        "desc": "test item",
+        "img": "duck.jpg"
+    },
+    {
+        "name": "test 2",
+        "desc": "test item 2",
+        "img": "tester.png"
+    }
+]}
