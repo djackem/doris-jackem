@@ -10,6 +10,9 @@ import { ThumbComponent } from './comp/thumb/thumb.component';
 import { SplashComponent } from './comp/splash/splash.component';
 import { CategoryComponent } from './comp/category/category.component';
 import { LinkButtonComponent } from './comp/link-button/link-button.component';
+import { CategoriesComponent } from './comp/categories/categories.component';
+import { SplitPipe } from './pipes/split.pipe';
+import { ItemComponent } from './comp/item/item.component';
 
 
 @NgModule({
@@ -18,7 +21,7 @@ import { LinkButtonComponent } from './comp/link-button/link-button.component';
     SearchResultComponent, 
     ThumbComponent,
     SplashComponent, 
-    CategoryComponent, LinkButtonComponent, 
+    CategoryComponent, LinkButtonComponent, CategoriesComponent, SplitPipe, ItemComponent, 
   ],
   imports: [
     HttpClientModule,

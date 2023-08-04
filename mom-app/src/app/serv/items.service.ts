@@ -7,26 +7,26 @@ import { Item } from '../types/item';
 })
 export class ItemsService {  
   
-  data: any = null;
-  items: Item[] = [];
-  categories: any[] = [];
-  url: string = './assets/config.json';
+  private data: any = null;
+  private items: Item[] = []; // *use id to get index from obj ( items[item.id] )
+  private items_by_category: any = {};
+  private url: string = './assets/config.json';
 
-  loading: boolean = true;
-  loading_emitter: EventEmitter<boolean> = new EventEmitter();
+  public loading: boolean = true;
+  public loading_emitter: EventEmitter<boolean> = new EventEmitter();
   
   constructor( http: HttpClient ) { 
     http.get(this.url).subscribe( data => {
+
       this.data = data;
+      let id = 0;
+
       if ( !this.data.hasOwnProperty('items') ){
         console.error(`Data file does not have items prop: ${data}`);
         return;
-      }else{        
-        let id = 0;
-        let cats = new Set();
-
+      }else{
         // Build item array
-        for (let item of this.data.items ){
+        for (let item of this.data.items ){ 
           const new_item: Item = {
             id: id++,
             name: item.name || 'Missing',
@@ -35,18 +35,39 @@ export class ItemsService {
             img_src: `assets/img/${item.img}` || 'Missing',
             img_loaded: false
           }
-          cats.add( new_item.category );
+
+          // Add to category register
+          if ( !this.items_by_category.hasOwnProperty( item.category ) ){
+             this.items_by_category[ item.category ] = [];
+          }
+          this.items_by_category[item.category].push( new_item );
+
+          // Add to items
           this.items.push( new_item );
         }
-        this.categories = Array(...cats);
+
+        // Finished loading json
         this.loading = false;
         this.loading_emitter.emit( true );
       }
       
     });
-
+    console.log(this.items_by_category)
   }
 
+  //////////////////////// Categories ////////////////////
+  get categories(): string[] {
+    return Object.keys( this.items_by_category ); 
+  }
+
+  GetCategoryItems( category: string ): Item[] { 
+    return this.items_by_category[ category ];
+  }
+
+  ////////////////////////// Items ///////////////////////
+  GetItem( id:number ): Item {
+    return this.items[id];
+  }
   SearchItems( name='*', category='*' ): Item[] {         
       const search_result = new Set<Item>();
       for ( const item of this.items ){
@@ -54,15 +75,6 @@ export class ItemsService {
         if ( item.category.includes(category) || category=='*' ) search_result.add( item );
       }
       return [...search_result];
-  }
-
+  } 
   
-
-  LoadImage( item: Item ): Promise<number>{
-    return new Promise((res,rej)=>{
-
-    })
-  }
-
-
 }

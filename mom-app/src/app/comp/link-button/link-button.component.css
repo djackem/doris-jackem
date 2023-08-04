@@ -6,10 +6,14 @@ a{
     text-decoration: none;
 }
 
+@media only screen and (max-width: 600px) {
+    :host{ flex: 1 0 auto; }
+}
+
+
 /* Padding on container, not headers */
-h3{ margin: 0px; }
 .link-btn{
-    padding: 0.5rem;
+    padding: 0.25rem;
     font-weight: 500;
     color: white;
     text-align: center;

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Item } from 'src/app/types/item';
 
 @Component({
@@ -6,10 +7,13 @@ import { Item } from 'src/app/types/item';
   templateUrl: './thumb.component.html',
   styleUrls: ['./thumb.component.css']
 })
-export class ThumbComponent implements OnInit{
+export class ThumbComponent implements OnInit{  
   @Input() item!: Item;
   image_loaded: boolean=false;
+  referral_url!: string;
+  constructor( private router: Router ){}
   ngOnInit(){
-    
+    //let urls: string[] = this.router.url.split('/');        
+    this.referral_url = this.router.url;//!urls || !urls.length ? '.' : urls.join('.');
   }
 }

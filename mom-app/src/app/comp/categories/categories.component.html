@@ -1,0 +1,18 @@
+<main id="category-container">
+    <nav id="side-nav">
+        <app-link-button *ngFor="let cat of itemService.categories"
+            [routerLink]="['/category/', cat]" 
+            routerLinkActive="active"
+            [text]="cat"
+        ></app-link-button>
+    </nav>        
+    <div>    
+        <router-outlet
+            (activate)="activated=true"
+            (deactivate)="activated=false"
+        ></router-outlet>
+        <div *ngIf="!activated">    
+            <p>Choose a category</p>
+        </div>
+    </div>
+</main>

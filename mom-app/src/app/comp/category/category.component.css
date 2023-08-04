@@ -1,0 +1,14 @@
+.thumb-container{
+    background-color: white;
+    display: grid;
+    gap: 2rem;
+    /* grid-template-columns: repeat( auto-fit, minmax( 200px, 1fr ) ); */
+    grid-template-columns: repeat( auto-fit, 200px );
+    justify-content: center;
+    padding: 2rem;
+}
+.thumb-container > *{
+    width: 200px;
+    height: 200px;
+    margin: auto;
+}

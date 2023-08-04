@@ -6,6 +6,36 @@
         "category": "ducks"
     },
     {
+        "name": "Chicks",
+        "desc": "Baby Ducks",
+        "img": "chicks.jpg",
+        "category": "ducks"
+    },
+    {
+        "name": "Chicks",
+        "desc": "Baby Ducks",
+        "img": "chicks.jpg",
+        "category": "ducks"
+    },
+    {
+        "name": "Chicks",
+        "desc": "Baby Ducks",
+        "img": "chicks.jpg",
+        "category": "ducks"
+    },
+    {
+        "name": "Chicks",
+        "desc": "Baby Ducks",
+        "img": "chicks.jpg",
+        "category": "ducks"
+    },
+    {
+        "name": "ducks",
+        "desc": "many ducks",
+        "img": "ducks.jpg",
+        "category": "ducks"
+    },
+    {
         "name": "test 2",
         "desc": "test item 2",
         "img": "tester.png",
