@@ -1,3 +1,8 @@
+
+#category-container{
+    min-height: 100%;
+}
+
 .thumb-container{
     background-color: white;
     display: grid;
@@ -6,6 +11,9 @@
     grid-template-columns: repeat( auto-fit, 200px );
     justify-content: center;
     padding: 2rem;
+    flex-grow: 1;
+    border-radius: 0px 0px 0px 2rem;
+    margin-bottom: 1.5rem;
 }
 .thumb-container > *{
     width: 200px;

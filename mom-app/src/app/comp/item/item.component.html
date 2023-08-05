@@ -1,4 +1,6 @@
 
-<button [routerLink]="back_url">Back</button>
+<div *ngIf="back_url">
+    <button [routerLink]="back_url">Back to {{back_name}}</button>
+</div>
 <p>{{ item.name }}</p>
 

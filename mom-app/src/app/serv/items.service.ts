@@ -68,10 +68,32 @@ export class ItemsService {
   GetItem( id:number ): Item {
     return this.items[id];
   }
+
+  Search( txt: string ): any {
+    const lowered = txt.toLowerCase();
+    txt = txt.toLowerCase();
+    const results: any = {};
+    let cats = new Set( this.categories.filter( cat => cat.toLowerCase().includes(txt) ));
+    let items = new Set( this.items.filter( item => 
+      item.name.toLowerCase().includes(txt) ||
+      item.desc.toLowerCase().includes(txt) 
+      // any other match
+    ));
+
+    // If we have anything found, prepare results obj
+    if (cats.size || items.size ){
+      if (cats.size) results['categories'] = [...cats];
+      if (items.size) results['items'] = [...items];
+      results['search_string'] = txt;
+    }    
+
+    return Object.keys(results).length===0 ? null : results;
+  }
+
   SearchItems( name='*', category='*' ): Item[] {         
       const search_result = new Set<Item>();
       for ( const item of this.items ){
-        if ( item.name.includes(name) || name=='*' ) search_result.add( item );
+        if ( item.name.toLowerCase().includes(name) || name=='*' ) search_result.add( item );
         if ( item.category.includes(category) || category=='*' ) search_result.add( item );
       }
       return [...search_result];

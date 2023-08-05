@@ -13,7 +13,9 @@
             <app-link-button [routerLink]="['/home']" [text]="'home'" routerLinkActive="active"></app-link-button>
             <app-link-button [routerLink]="['/category']" [text]="'categories'" routerLinkActive="active"></app-link-button>
         </div>        
-        <div id="search">Search</div>
+        <div id="search">
+            <app-search-bar></app-search-bar>
+        </div>
     </nav>
     <!-- <nav id="side-nav">
         <app-link-button *ngFor="let cat of itemService.categories"

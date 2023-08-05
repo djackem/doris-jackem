@@ -1,0 +1,30 @@
+
+ul{
+    margin: 0px;
+    margin-left: 1rem;
+}
+li{
+    list-style-type: none;
+}
+h4{
+    margin: 0.25rem 0px;
+}
+
+#search-container{
+    position: relative;    
+}
+#search-string{
+    font-size: small;
+    font-weight: 500;
+    margin: 0px 0px 1rem 0px;
+}
+#results{    
+    padding: 1rem;
+    position: absolute;
+    z-index: 1000;
+    top: 100%;
+    left: 0px;
+    width: 100%;
+    background: linear-gradient( rgba(230, 230, 230, 1),rgba(230, 230, 230, 0.95) );
+    
+}

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,8 +12,8 @@ import { SplashComponent } from './comp/splash/splash.component';
 import { CategoryComponent } from './comp/category/category.component';
 import { LinkButtonComponent } from './comp/link-button/link-button.component';
 import { CategoriesComponent } from './comp/categories/categories.component';
-import { SplitPipe } from './pipes/split.pipe';
 import { ItemComponent } from './comp/item/item.component';
+import { SearchBarComponent } from './comp/search-bar/search-bar.component';
 
 
 @NgModule({
@@ -21,9 +22,14 @@ import { ItemComponent } from './comp/item/item.component';
     SearchResultComponent, 
     ThumbComponent,
     SplashComponent, 
-    CategoryComponent, LinkButtonComponent, CategoriesComponent, SplitPipe, ItemComponent, 
+    CategoryComponent, 
+    LinkButtonComponent, 
+    CategoriesComponent,
+    ItemComponent, 
+    SearchBarComponent, 
   ],
   imports: [
+    FormsModule,
     HttpClientModule,
     BrowserModule,
     AppRoutingModule

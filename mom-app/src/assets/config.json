@@ -3,7 +3,7 @@
         "name": "test",
         "desc": "test item",
         "img": "duck.jpg",
-        "category": "ducks"
+        "category": "duck"
     },
     {
         "name": "Chicks",

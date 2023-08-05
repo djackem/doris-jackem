@@ -4,14 +4,13 @@
 -->
 <img [src]="item.img_src" (load)="image_loaded=true" hidden>
 
-<div *ngIf="image_loaded" 
-    class="thumb image-holder" 
+<div *ngIf="image_loaded" class="thumb image-holder" 
     [style.background-image]="'url(' + item.img_src + ')'"
     [routerLink]="['/item/', item.id]"
     [queryParams]="{ refer: referral_url }"
 >
-    {{ item.img_src }}
+    <span class="title thumb-title">{{ item.name }}</span>
 </div>
 
 <!-- Loading Div spinner -->
-<div *ngIf="!image_loaded" class="thumb image-loading"></div>
+<div *ngIf="!image_loaded" class="title thumb image-loading"></div>
