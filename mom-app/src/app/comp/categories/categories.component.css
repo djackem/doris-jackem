@@ -10,6 +10,21 @@
     flex-direction: column;
 }
 
+.side-btn{
+    cursor: pointer;
+    background-color: blueviolet;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: large;
+    font-weight: bold;
+    border-radius: 0.25rem;
+    text-align: right;
+    transition: all 500ms;
+}
+.side-btn.active{
+    background-color: orangered;
+}
+
 @media screen and (max-width: 600px) {
     #category-container{
         grid-template-columns: 1fr;

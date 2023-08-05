@@ -10,8 +10,15 @@
     <nav id="header">
         <div id="logo">Logo</div>
         <div id="top-nav">
-            <app-link-button [routerLink]="['/home']" [text]="'home'" routerLinkActive="active"></app-link-button>
-            <app-link-button [routerLink]="['/category']" [text]="'categories'" routerLinkActive="active"></app-link-button>
+
+            <div [routerLink]="['/home']" routerLinkActive="active">
+                Home
+            </div>
+
+            <div [routerLink]="['/category']" routerLinkActive="active">
+                Categories
+            </div>
+            
         </div>        
         <div id="search">
             <app-search-bar></app-search-bar>

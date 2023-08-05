@@ -1,12 +1,14 @@
 <main id="category-container" class="left-nav-container">
+    
     <!-- Category Buttons Nav Side -->
     <nav id="side-nav">
-        <app-link-button *ngFor="let cat of itemService.categories"
+        <div *ngFor="let cat of itemService.categories"
             [routerLink]="['/category/', cat]" 
             routerLinkActive="active"
-            [text]="cat"
-        ></app-link-button>
-    </nav>        
+            [ngClass]="{'side-btn': true}"
+        >{{ cat }}</div>
+    </nav>
+
     <div>    
         <router-outlet
             (activate)="activated=true"
@@ -16,4 +18,5 @@
             <p>Choose a category</p>
         </div>
     </div>
+
 </main>

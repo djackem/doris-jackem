@@ -16,9 +16,9 @@ h1, h2, h3, h4, h5, h6{
   /* font-weight: 600; */
 }
 
-.active{
+/* .active{
   border: 2px solid red;
-}
+} */
 
 /* A container with 2 divs: nav content */
 .left-nav-container{
@@ -32,3 +32,4 @@ h1, h2, h3, h4, h5, h6{
   font-weight: bold;
   text-shadow: 0px 2px 8px #000;
 }
+

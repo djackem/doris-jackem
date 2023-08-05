@@ -1,37 +1,40 @@
-<main id="search-container">
+<main >
+    <div id="search-container">
+        <!-- Input Field -->
+        <input 
+            #search_input
+            type="text" 
+            id="search-field" 
+            (focus)="onFocusChange( true )"
+            (blur)="onFocusChange( false )"
+            [(ngModel)]="search_string"
+            (ngModelChange)="onInputChange($event)" name="name"        
+            [ngClass]="{'active':isFocused}" 
+        />
 
-    <!-- Input Field -->
-    <input 
-        #search_input
-        type="text" 
-        id="name" 
-        (focus)="onFocusChange( true )"
-        (blur)="onFocusChange( false )"
-        [(ngModel)]="search_string"
-        (ngModelChange)="onInputChange($event)" name="name"        
-        [ngClass]="{'active':isFocused}"
-    />
+        <button id="search-btn">Search</button>
+        
 
-    <!-- Search Results -->
-    <div id="results" *ngIf="results !== null">
-        <p id="search-string">Search results for: {{ results['search_string'] }}</p>
-        <!-- Categories -->       
-        <div *ngIf="results['categories']">
-            <h4>Category</h4>
-            <ul>
-                <li *ngFor="let cat of results['categories']">
-                    <a [routerLink]="['/category', cat ]">{{ cat }}</a>
-                </li>
-            </ul>
-        </div>        
-        <div *ngIf="results['items']">
-            <h4>Items</h4>
-            <ul>
-                <li *ngFor="let item of results['items']">
-                    <a [routerLink]="['/item', item.id]">{{item.name }}</a>
-                </li>
-            </ul>
-        </div>        
+        <!-- Search Results -->
+        <div id="results" *ngIf="results !== null">
+            <p id="search-string">Search results for: {{ results['search_string'] }}</p>
+            <!-- Categories -->       
+            <div *ngIf="results['categories']">
+                <h4>Category</h4>
+                <ul>
+                    <li *ngFor="let cat of results['categories']">
+                        <a [routerLink]="['/category', cat ]">{{ cat }}</a>
+                    </li>
+                </ul>
+            </div>        
+            <div *ngIf="results['items']">
+                <h4>Items</h4>
+                <ul>
+                    <li *ngFor="let item of results['items']">
+                        <a [routerLink]="['/item', item.id]">{{item.name }}</a>
+                    </li>
+                </ul>
+            </div>        
+        </div>
     </div>
-
 </main>

@@ -10,7 +10,6 @@ import { ThumbComponent } from './comp/thumb/thumb.component';
 
 import { SplashComponent } from './comp/splash/splash.component';
 import { CategoryComponent } from './comp/category/category.component';
-import { LinkButtonComponent } from './comp/link-button/link-button.component';
 import { CategoriesComponent } from './comp/categories/categories.component';
 import { ItemComponent } from './comp/item/item.component';
 import { SearchBarComponent } from './comp/search-bar/search-bar.component';
@@ -23,7 +22,6 @@ import { SearchBarComponent } from './comp/search-bar/search-bar.component';
     ThumbComponent,
     SplashComponent, 
     CategoryComponent, 
-    LinkButtonComponent, 
     CategoriesComponent,
     ItemComponent, 
     SearchBarComponent, 
