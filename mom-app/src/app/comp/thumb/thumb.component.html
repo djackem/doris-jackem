@@ -1,16 +1,9 @@
-<!-- 
-    This handles loading of the image 
-    You could use a directive here if we used an image instead of a div background
--->
-<img [src]="item.img_src" (load)="image_loaded=true" hidden>
-
-<div *ngIf="image_loaded" class="thumb image-holder" 
-    [style.background-image]="'url(' + item.img_src + ')'"
+<!-- Lazy loaded background image -->
+<div class="thumb image-holder" 
+    [lazyLoad]="item.img_src"
+    [defaultImage]="'/assets/img/tester.png'"
     [routerLink]="['/item/', item.id]"
     [queryParams]="{ refer: referral_url }"
 >
     <span class="title thumb-title">{{ item.name }}</span>
 </div>
-
-<!-- Loading Div spinner -->
-<div *ngIf="!image_loaded" class="title thumb image-loading"></div>

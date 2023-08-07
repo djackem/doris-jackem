@@ -9,27 +9,24 @@
 <div *ngIf="!itemService.loading; else load_screen" id="content-layout">
     <nav id="header">
         <div id="logo">Logo</div>
+
         <div id="top-nav">
-
-            <div [routerLink]="['/home']" routerLinkActive="active">
-                Home
-            </div>
-
+            <div 
+                class="head-btn"
+                [routerLink]="['/home']" 
+                routerLinkActive="active"
+                >Home</div>
             <div [routerLink]="['/category']" routerLinkActive="active">
                 Categories
-            </div>
-            
-        </div>        
+            </div>            
+        </div>  
+
         <div id="search">
             <app-search-bar></app-search-bar>
         </div>
+
     </nav>
-    <!-- <nav id="side-nav">
-        <app-link-button *ngFor="let cat of itemService.categories"
-            [routerLink]="['/category', cat]" 
-            [text]="cat"
-        ></app-link-button>
-    </nav> -->
+    
     <div id="content">
         <router-outlet></router-outlet>
     </div>

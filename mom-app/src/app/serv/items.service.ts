@@ -1,6 +1,7 @@
 import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Item } from '../types/item';
+import { SearchResult } from '../types/SearchResult';
 
 @Injectable({
   providedIn: 'root'
@@ -69,25 +70,33 @@ export class ItemsService {
     return this.items[id];
   }
 
-  Search( txt: string ): any {
-    const lowered = txt.toLowerCase();
-    txt = txt.toLowerCase();
-    const results: any = {};
-    let cats = new Set( this.categories.filter( cat => cat.toLowerCase().includes(txt) ));
-    let items = new Set( this.items.filter( item => 
-      item.name.toLowerCase().includes(txt) ||
-      item.desc.toLowerCase().includes(txt) 
-      // any other match
-    ));
+  Search( txt: string ): SearchResult[] | null {
+    const lowered = txt.toLowerCase();    
+    const results: SearchResult[] = [];
 
-    // If we have anything found, prepare results obj
-    if (cats.size || items.size ){
-      if (cats.size) results['categories'] = [...cats];
-      if (items.size) results['items'] = [...items];
-      results['search_string'] = txt;
-    }    
+    this.categories.forEach( cat => {
+      if ( cat.toLowerCase().includes(lowered) ){
+        results.push( <SearchResult>{
+          url: `/category/${cat}`,
+          text: cat,
+          desc: `The "${cat}" category`,
+        })
+      };
+    })
 
-    return Object.keys(results).length===0 ? null : results;
+    this.items.forEach( item => {
+      if ( item.name.toLowerCase().includes(lowered) || item.desc.toLowerCase().includes(lowered)){
+        results.push( <SearchResult>{
+          url: '/item',
+          params: item.id,
+          item: item,
+          text: item.name,
+          desc: item.desc,
+        })
+      }
+    });
+
+    return results.length ? results : null;
   }
 
   SearchItems( name='*', category='*' ): Item[] {         

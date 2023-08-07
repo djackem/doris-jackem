@@ -1,34 +1,30 @@
+
+
+
 /* Desktop */
-#content-layout{    
+#content-layout{  
     display: grid;    
     grid-template-rows: 100px 1fr 50px;
-    min-height: 100vh;    
+    min-height: 100vh;  
 }
 
 /* Mobile */
-/* @media only screen and (max-width: 600px) {
-    #content-layout{
-        grid-template-columns: 1fr;
-        grid-template-rows: 100px min-content 1fr 50px;
-        grid-template-areas:
-        "n-top n-top"
-        "n-side n-side"
-        "content content"
-        "foot foot";
-    }
-    #side-nav{
-        flex-direction: row !important;
-        justify-content: center !important;
-        flex-wrap: wrap;
-    }
-} */
-
+@media only screen and (max-width: 600px) {
+    #header{
+        grid-template-areas: 
+            "logo nav" 
+            "search search" !important;
+    }    
+}
 
 /************** Header ****************/
-#header{    
+#header{
+    position: relative;
+    z-index: 100; 
+    width: 100%;   
     background-color: green;
     display: grid;
-    grid-template-columns: 20% 1fr;
+    grid-template-columns: 20% 80%;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: 
         "logo nav" 
@@ -38,20 +34,35 @@
         grid-area: logo;
     }
     #top-nav{
+        width: min-content;
         grid-area: nav;
         display: flex;
         gap: 0.5rem;
+        justify-content: flex-end;
+        align-content: center;
+        
     }
     #top-nav > *{
-        flex: 1 0 auto;
+        flex: 1 1 auto;
+    }
+
+    .head-btn{        
+        cursor: pointer;
+        background-color: blueviolet;
+        color: white;
+        /* padding: 0.5rem 1rem; */
+        font-size: large;
+        font-weight: bold;
+        border-radius: 0.25rem;
+        text-align: center;
+        transition: all 500ms;        
     }
 
     #search{
         grid-area: search;
     }
 
-#side-nav{
-    
+#side-nav{    
     background-color: red;
     display: flex;
     flex-flow: column wrap;
@@ -60,11 +71,10 @@
     justify-content: flex-start;
 }
 #content{
-    /**/
-    display: block;
+    /* position: relative; */
+    /* z-index: 99; */
 }
-#footer{
-    
+#footer{    
     background-color: grey;
 }
 

@@ -1,0 +1,23 @@
+<main>
+    <h3>Search results for: "{{ search_string }}"</h3>
+    <small>Showing {{ start_index }} - {{ end_index }} ({{ results.length }})</small>
+    <br/><br/>
+    <div id="search-body">
+
+        <!-- Items -->
+        <h3 *ngIf="categories.length">Categories</h3>
+        <div *ngIf="categories.length" id="category-container">
+            <button *ngFor="let category of categories"
+                [routerLink]="category.url"
+            >{{ category.text }}</button>
+        </div>
+        
+        <!-- Items -->
+        <h3 *ngIf="items.length">Items</h3>
+        <div *ngIf="items.length" id="item-container">
+            <app-thumb *ngFor="let item of items" [item]="item"></app-thumb>
+        </div>
+    </div>
+    
+</main>
+

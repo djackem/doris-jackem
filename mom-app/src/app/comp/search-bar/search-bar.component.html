@@ -1,40 +1,73 @@
-<main >
-    <div id="search-container">
-        <!-- Input Field -->
-        <input 
+<main id="search-container">
+
+    <div id="search-bar-container">
+        <input id="search-field" 
             #search_input
-            type="text" 
-            id="search-field" 
-            (focus)="onFocusChange( true )"
-            (blur)="onFocusChange( false )"
+            type="text"
+            placeholder="Search Categories, Name, Description, etc" 
             [(ngModel)]="search_string"
             (ngModelChange)="onInputChange($event)" name="name"        
-            [ngClass]="{'active':isFocused}" 
+            [ngClass]="{ 'active':isFocused, 'errors': errors }" 
+            (focus)="onFocusEvent(true)"
+            (blur)="onFocusEvent(false)"
         />
+        <button id="search-clear" 
+            class="icon-btn"
+            (click)="onClearClick()"
+        ></button>
+        <button id="search-btn" 
+            class="icon-btn"
+            (click)="onSearchClick()"
+        ></button>
+    </div>
 
-        <button id="search-btn">Search</button>
-        
+    <!-- Search Results -->
+    <div id="search-results" *ngIf="results || errors" [@slideInOut]>
 
-        <!-- Search Results -->
-        <div id="results" *ngIf="results !== null">
-            <p id="search-string">Search results for: {{ results['search_string'] }}</p>
-            <!-- Categories -->       
-            <div *ngIf="results['categories']">
-                <h4>Category</h4>
+        <ng-template #error>
+            <h4>There was an error searching for this:</h4>
+            <div *ngFor="let error of errors">
+                <p>{{ error.text }}</p>
+                <small *ngIf="error.desc">{{error.desc}}</small>
+            </div>
+        </ng-template>
+
+        <!-- No Errors - the results -->
+        <div *ngIf="!errors; else error">
+
+            <!-- <ng-template #noresults>
+                No Results Found.
+            </ng-template> -->
+
+            <ng-template #nosearch>
+                No results found.
+            </ng-template>
+
+            <div *ngIf="results; else nosearch">
+                <p>Top results results for: {{ search_string }}</p><br/>
                 <ul>
-                    <li *ngFor="let cat of results['categories']">
-                        <a [routerLink]="['/category', cat ]">{{ cat }}</a>
+                    <li *ngFor="let result of results; let i=index">
+                        <a *ngIf="result.params && i < 6"
+                            [routerLink]="[ result.url, result.params ]"
+                            routerLinkActive="active"
+                            >
+                            <app-search-result [data]="result"></app-search-result>
+                        </a>
+                   
+                        <a *ngIf="!result.params && i < 6" 
+                            [routerLink]="[ result.url ]"
+                            routerLinkActive="active"
+                            >
+                            <app-search-result [data]="result"></app-search-result>
+                        </a>                    
                     </li>
                 </ul>
-            </div>        
-            <div *ngIf="results['items']">
-                <h4>Items</h4>
-                <ul>
-                    <li *ngFor="let item of results['items']">
-                        <a [routerLink]="['/item', item.id]">{{item.name }}</a>
-                    </li>
-                </ul>
-            </div>        
+                <button *ngIf="results && results.length > 6"
+                    (click)="onSearchClick()"
+                    >See more results</button>
+            </div>
+
         </div>
+                
     </div>
 </main>
