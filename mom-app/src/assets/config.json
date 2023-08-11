@@ -3,29 +3,30 @@
         "name": "test",
         "desc": "test item",
         "img": "duck.jpg",
-        "category": "duck"
+        "category": "duck",
+        "imgs":["duck.jpg", "duck.jpg", "duck.jpg"]
     },
     {
         "name": "Chicks",
-        "desc": "Baby Ducks",
+        "desc": "Baby Ducks 1",
         "img": "chicks.jpg",
         "category": "ducks"
     },
     {
         "name": "Chicks",
-        "desc": "Baby Ducks",
+        "desc": "Baby Ducks 2",
         "img": "chicks.jpg",
         "category": "ducks"
     },
     {
         "name": "Chicks",
-        "desc": "Baby Ducks",
+        "desc": "Baby Ducks 3",
         "img": "chicks.jpg",
         "category": "ducks"
     },
     {
         "name": "Chicks",
-        "desc": "Baby Ducks",
+        "desc": "Baby Ducks 4",
         "img": "chicks.jpg",
         "category": "ducks"
     },

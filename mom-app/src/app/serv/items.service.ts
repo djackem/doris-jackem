@@ -34,7 +34,7 @@ export class ItemsService {
             desc: item.desc || 'Missing',
             category: item.category || 'Missing',
             img_src: `assets/img/${item.img}` || 'Missing',
-            img_loaded: false
+            imgs : item.imgs?.map( i => `assets/img/${i}`)
           }
 
           // Add to category register
@@ -71,11 +71,12 @@ export class ItemsService {
   }
 
   Search( txt: string ): SearchResult[] | null {
-    const lowered = txt.toLowerCase();    
+    const lowered = txt.toLowerCase(); 
+    console.log(lowered)   
     const results: SearchResult[] = [];
 
     this.categories.forEach( cat => {
-      if ( cat.toLowerCase().includes(lowered) ){
+      if ( cat.toLowerCase().includes( lowered ) ){
         results.push( <SearchResult>{
           url: `/category/${cat}`,
           text: cat,
@@ -85,7 +86,9 @@ export class ItemsService {
     })
 
     this.items.forEach( item => {
-      if ( item.name.toLowerCase().includes(lowered) || item.desc.toLowerCase().includes(lowered)){
+      if (  item.name.toLowerCase().includes( lowered ) || 
+            item.desc.toLowerCase().includes( lowered ) ||
+            item.name===lowered || item.desc===lowered ){
         results.push( <SearchResult>{
           url: '/item',
           params: item.id,
@@ -96,6 +99,7 @@ export class ItemsService {
       }
     });
 
+    console.log(results)
     return results.length ? results : null;
   }
 
@@ -106,6 +110,11 @@ export class ItemsService {
         if ( item.category.includes(category) || category=='*' ) search_result.add( item );
       }
       return [...search_result];
-  } 
+  }
+
+  GetRandom(){
+    const i_random = Math.floor( Math.random() * this.items.length );    
+    return this.items[i_random] ? this.items[i_random] : this.items[0];
+  }
   
 }

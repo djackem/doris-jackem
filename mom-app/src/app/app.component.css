@@ -1,10 +1,7 @@
-
-
-
 /* Desktop */
 #content-layout{  
     display: grid;    
-    grid-template-rows: 100px 1fr 50px;
+    grid-template-rows: auto 1fr 50px;
     min-height: 100vh;  
 }
 
@@ -22,10 +19,10 @@
     position: relative;
     z-index: 100; 
     width: 100%;   
-    background-color: green;
+    background-color: var(--header-color);
     display: grid;
     grid-template-columns: 20% 80%;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: min-content 1fr;
     grid-template-areas: 
         "logo nav" 
         "logo search";
@@ -46,16 +43,11 @@
         flex: 1 1 auto;
     }
 
-    .head-btn{        
-        cursor: pointer;
-        background-color: blueviolet;
-        color: white;
-        /* padding: 0.5rem 1rem; */
-        font-size: large;
-        font-weight: bold;
-        border-radius: 0.25rem;
-        text-align: center;
-        transition: all 500ms;        
+    #nav-btn-container{
+        display: flex;
+        gap: 1rem;
+        padding: 1rem;
+        padding-bottom: 0px;
     }
 
     #search{
@@ -63,17 +55,15 @@
     }
 
 #side-nav{    
-    background-color: red;
     display: flex;
     flex-flow: column wrap;
     gap: 0.5rem;
     padding: 1rem;
     justify-content: flex-start;
 }
-#content{
-    /* position: relative; */
-    /* z-index: 99; */
-}
+/* #content{
+    
+} */
 #footer{    
     background-color: grey;
 }

@@ -1,6 +1,49 @@
+<!-- <div *ngIf="zoom_url" id="zoom-image-container" [@fadeInOut] >
+    <div id="zoom-image-inner">
+        <img class="zoom-image"
+            [lazyLoad]="zoom_url"
+            [defaultImage]="'/assets/img/tester.png'"
+        />
+        <div id="close-btn"
+            class="cursor-pointer"
+            [defaultImage]="'/assets/page-assets/btn_x.svg'"
+            [lazyLoad]="'/assets/page-assets/btn_x.svg'"
+            (click)="onCloseClick()"
+        ></div>
+    </div>        
+</div> -->
 
-<div *ngIf="back_url">
-    <button [routerLink]="back_url">Back to {{back_name}}</button>
-</div>
-<p>{{ item.name }}</p>
+<main>    
+
+    <div id="side-bar">        
+        <button *ngIf="back_url" [routerLink]="back_url">Back to {{back_name}}</button>   
+    </div>
+    
+    <div id="content">
+        <span id="category-label">{{ item.category }}</span>
+
+        <!-- Main Image -->
+        <h2>{{ item.name }}</h2><br/>
+        <img
+            id="main-image"
+            class="flex-child"
+            [lazyLoad]="item.img_src"
+            [defaultImage]="'/assets/img/tester.png'"
+        />
+
+        <!-- Description -->
+        <p *ngIf="item.desc">{{ item.desc }}</p><br/>
+
+        <!-- Gallery -->
+        <div *ngIf="item.imgs" class="img-gallery">
+            <img *ngFor="let img of item.imgs"
+                class="cursor-pointer"
+                [lazyLoad]="img"
+                [defaultImage]="'/assets/img/tester.png'"
+                />
+        </div>
+    </div>
+
+</main>
+
 

@@ -11,14 +11,17 @@
         <div id="logo">Logo</div>
 
         <div id="top-nav">
-            <div 
-                class="head-btn"
-                [routerLink]="['/home']" 
-                routerLinkActive="active"
-                >Home</div>
-            <div [routerLink]="['/category']" routerLinkActive="active">
-                Categories
-            </div>            
+            <div id="nav-btn-container">
+                <button class="flex-child active"
+                    [routerLink]="['/home']" 
+                    routerLinkActive="active"
+                >Home</button>
+    
+                <button class="flex-child"
+                    [routerLink]="['/category']" 
+                    routerLinkActive="active"
+                >Categories</button>            
+            </div>
         </div>  
 
         <div id="search">
@@ -30,5 +33,7 @@
     <div id="content">
         <router-outlet></router-outlet>
     </div>
+
     <div id="footer">Footer</div>
+    
 </div>

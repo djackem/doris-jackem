@@ -35,31 +35,18 @@
         <!-- No Errors - the results -->
         <div *ngIf="!errors; else error">
 
-            <!-- <ng-template #noresults>
-                No Results Found.
-            </ng-template> -->
+            <ng-template #nosearch>No results found.</ng-template>
 
-            <ng-template #nosearch>
-                No results found.
-            </ng-template>
-
-            <div *ngIf="results; else nosearch">
+            <div *ngIf="results.length>0; else nosearch">
                 <p>Top results results for: {{ search_string }}</p><br/>
                 <ul>
-                    <li *ngFor="let result of results; let i=index">
-                        <a *ngIf="result.params && i < 6"
-                            [routerLink]="[ result.url, result.params ]"
-                            routerLinkActive="active"
+                    <li *ngFor="let result of results; index as i">
+                        <a *ngIf="i < 6"
+                            [routerLink]="result.params!==undefined ? [ result.url, result.params ] : [ result.url ]"
+                            [routerLinkActive]="'active'"
                             >
                             <app-search-result [data]="result"></app-search-result>
                         </a>
-                   
-                        <a *ngIf="!result.params && i < 6" 
-                            [routerLink]="[ result.url ]"
-                            routerLinkActive="active"
-                            >
-                            <app-search-result [data]="result"></app-search-result>
-                        </a>                    
                     </li>
                 </ul>
                 <button *ngIf="results && results.length > 6"

@@ -14,8 +14,7 @@ import { SearchResult } from 'src/app/types/SearchResult';
   animations:[
     trigger('slideInOut', [
       transition(':enter', [
-        style({transform: 'scaleY(0%)'}),
-        
+        style({transform: 'scaleY(0%)'}),        
         animate('200ms ease-in', style({ transform: 'scaleY(100%)' }))
         
       ]),
@@ -42,23 +41,24 @@ export class SearchBarComponent {
         this.search_string = "";
         this.results = null;
         this.errors = null;
-      }) 
-  }
+      });
+  };
 
   onFocusEvent( focus: boolean ){
     this.isFocused = focus;
-  }
+  };
 
   onClearClick(){
     this.search_string = '';
     this.results = null;
     this.errors = null;
-  }
+  };
+
   onSearchClick(){
     if ( !this.Validate(this.search_string) ){
       this.router.navigate(['/search', this.search_string]);
-    }
-  }
+    };
+  };
   
   
   onInputChange( txt: string ){
@@ -75,11 +75,11 @@ export class SearchBarComponent {
         this.results = res ? res : [];
       }
     };
-  }
+  };
 
   onFocusChange( focus: boolean ){
     this.isFocused = focus;
-  }
+  };
 
   Validate( txt: string ): InputError[] | null {
     let errs: InputError[] = [];
@@ -88,6 +88,6 @@ export class SearchBarComponent {
       errs.push(<InputError>{ text: 'Search too Short', desc: 'Please enter more than 3 valid characters.' });
     }
     return errs.length ? errs : null;
-  }
+  };
 
-}
+};

@@ -17,6 +17,7 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { SearchResultComponent } from './comp/search-result/search-result.component';
 import { SearchPageComponent } from './comp/search-page/search-page.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,   
@@ -25,7 +26,9 @@ import { SearchPageComponent } from './comp/search-page/search-page.component';
     CategoryComponent, 
     CategoriesComponent,
     ItemComponent, 
-    SearchBarComponent, SearchResultComponent, SearchPageComponent, 
+    SearchBarComponent, 
+    SearchResultComponent, 
+    SearchPageComponent, 
   ],
   imports: [
     BrowserAnimationsModule,

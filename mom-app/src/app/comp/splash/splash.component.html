@@ -1,1 +1,22 @@
-<p>splash works!</p>
+
+<div id="splash-wrapper">
+
+    <img id="spash-image"
+        [lazyLoad]="featured_item.img_src"
+        [defaultImage]="'/assets/img/tester.png'"
+    />
+
+    <div id="splash-content">
+        <h1>Doris Jackem</h1>
+        <p>Website</p>
+    </div>
+
+    <div id="item-info">
+        <button
+            [routerLink]="['/item/' + featured_item.id]"
+            [queryParams]="{'refer':'/home'}"
+        >{{ featured_item.name }}</button><br/>
+        <small>{{ featured_item.category }}</small>
+    </div>  
+
+</div>

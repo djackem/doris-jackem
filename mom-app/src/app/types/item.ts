@@ -4,5 +4,5 @@ export interface Item {
     category: string;
     desc: string;
     img_src: string;
-    img_loaded: boolean;
+    imgs : string[] | undefined;
 }

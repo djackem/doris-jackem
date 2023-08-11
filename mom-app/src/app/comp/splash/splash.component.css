@@ -1,0 +1,33 @@
+#splash-wrapper{
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+    justify-content: center;
+    background: linear-gradient(#fff, #535353);
+}
+
+#splash-wrapper > *{
+    position: absolute;    
+}
+
+#spash-image{
+    top: 0; left: 0;
+    opacity: 0.5;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;    
+}
+
+#splash-content{
+    top: 0; left: 0;
+    padding: 3rem;
+    margin: auto;
+}
+
+#item-info{
+    right: 0; bottom: 0;
+    padding: 2rem;
+    max-width: 200px;
+    text-align: right;
+}
