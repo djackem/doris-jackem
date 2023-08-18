@@ -15,8 +15,25 @@
 
 <main>    
 
-    <div id="side-bar">        
-        <button *ngIf="back_url" [routerLink]="back_url">Back to {{back_name}}</button>   
+    <div id="side-bar" class="stitches">        
+        <button *ngIf="back_url" 
+            [routerLink]="back_url"
+            class="stitches active"
+        >Back to {{back_name}}</button>
+        
+        
+        <!-- Links -->
+        <div *ngIf="item.links" id="links-container">
+            <br/>
+            <h3>External Links:</h3>
+            <div id="external-links">
+                <a *ngFor="let link of item.links | keyvalue"
+                    href="{{ link.value }}"
+                ><button class="stitches">{{link.key}}</button></a>
+            </div>
+            <!-- <small>(You will be taken to an external site)</small> -->
+        </div>
+
     </div>
     
     <div id="content">
@@ -28,7 +45,7 @@
             id="main-image"
             class="flex-child"
             [lazyLoad]="item.img_src"
-            [defaultImage]="'/assets/img/tester.png'"
+            [defaultImage]="'/assets/page-assets/loading.svg'"
         />
 
         <!-- Description -->
@@ -37,11 +54,24 @@
         <!-- Gallery -->
         <div *ngIf="item.imgs" class="img-gallery">
             <img *ngFor="let img of item.imgs"
-                class="cursor-pointer"
                 [lazyLoad]="img"
-                [defaultImage]="'/assets/img/tester.png'"
+                [defaultImage]="'/assets/page-assets/loading.svg'"
                 />
         </div>
+
+        <!-- Links -->
+        <!-- <div *ngIf="item.links" id="links-container">
+            <h3>Links:</h3>            
+            <div>
+                <a *ngFor="let link of item.links | keyvalue"
+                    href="{{ link.value }}"
+                >
+                    <button>{{link.key}}</button>
+                </a>
+            </div>
+            <small>(You will be taken to an external site)</small>
+        </div> -->
+
     </div>
 
 </main>

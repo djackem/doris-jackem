@@ -5,4 +5,5 @@ export interface Item {
     desc: string;
     img_src: string;
     imgs : string[] | undefined;
+    links?: {[key: string]: string};
 }

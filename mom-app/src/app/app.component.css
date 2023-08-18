@@ -11,17 +11,22 @@
         grid-template-areas: 
             "logo nav" 
             "search search" !important;
-    }    
+    }
+    #logo{
+        padding: 0.5rem 0 0 0 !important;
+    } 
 }
 
 /************** Header ****************/
 #header{
+    border-width: 0;
+    border-bottom-width: 2px;
     position: relative;
     z-index: 100; 
     width: 100%;   
     background-color: var(--header-color);
     display: grid;
-    grid-template-columns: 20% 80%;
+    grid-template-columns: clamp( 30px, 20%, 150px ) 1fr;
     grid-template-rows: min-content 1fr;
     grid-template-areas: 
         "logo nav" 
@@ -29,7 +34,13 @@
 }
     #logo{
         grid-area: logo;
+        background-size: contain;
+        background-origin: content-box;
+        background-position: center;
+        padding: 1rem;
+        background-repeat: no-repeat;
     }
+
     #top-nav{
         width: min-content;
         grid-area: nav;
@@ -61,10 +72,31 @@
     padding: 1rem;
     justify-content: flex-start;
 }
-/* #content{
+#content{
+    background-color: white;
+    min-height: 100%;
+}
+
+#footer{
+    padding: 1rem;
+    background-color: var(--header-color);
+    display: flex;    
+    align-items: center;
+    border-width: 0;
+    border-top-width: 2px;
+    justify-content: space-between;
+}
+#footer h2{
     
-} */
-#footer{    
-    background-color: grey;
+}
+
+#socials{
+    display: flex;
+    gap: 0.5rem;
+}
+
+#socials > *{
+    height: 30px;
+    width: 30px;
 }
 

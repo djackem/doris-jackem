@@ -2,6 +2,7 @@
 
 main{
     display: grid;
+    min-height: 100%;
     grid-template-columns: 20% 1fr;
     grid-template-rows: min-content 1fr;
     grid-template-areas: 
@@ -14,7 +15,17 @@ main{
         grid-template-areas: 
             "nav nav"
             "content content";
-    }    
+    }
+    #content{
+        border-left-width: 0 !important;
+    }
+    #side-bar{
+        border-right-width: 0 !important;
+        border-bottom-width: 2px !important;
+    }
+    #external-links > *{
+        width: auto !important;
+    }
 }
 
 main > *{
@@ -26,6 +37,23 @@ main > *{
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
+    background-color: var(--side-bar_color);
+    min-height: 100%;
+    border-width: 0;
+    border-right-width: 2px;
+}
+
+#external-links{
+    display: flex;
+    padding-top: 0.5rem;
+}
+#external-links > *{
+    width: 100%;
+    flex: 1 1 auto;
+}
+#external-links button{
+    width: 100%;
+    background-color: rgba(0,0,0,0.04);
 }
 
 #content{
@@ -34,8 +62,7 @@ main > *{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border-radius: 0px 0px 0px 2rem;
-    background-color: white;    
+    border-width: 0 0 2px 2px;
 }
 
 #content p{
@@ -47,7 +74,7 @@ main > *{
     flex: 1 1 auto;
     overflow: hidden;
     width: 100%;
-    max-height: 75vh;
+    /* max-height: 75vh; */
 }
 
 #category-label{
@@ -72,7 +99,7 @@ main > *{
 
 .img-gallery > img{
     width: 200px;
-    height: 200px;
+    height: auto;
 }
 
 #zoom-image-container{
@@ -105,3 +132,14 @@ main > *{
         width: 40px;
         height: 40px;
     }
+
+#links-container > div{
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-start;
+    flex-flow: row wrap;
+}
+
+/* #links-container a{
+    
+} */

@@ -3,20 +3,55 @@
 
     <img id="spash-image"
         [lazyLoad]="featured_item.img_src"
-        [defaultImage]="'/assets/img/tester.png'"
+        [defaultImage]="'/assets/page-assets/loading.svg'"
     />
 
     <div id="splash-content">
         <h1>Doris Jackem</h1>
-        <p>Website</p>
+        <p>Official Website</p>
     </div>
 
     <div id="item-info">
         <button
+            id="item-btn"
+            class="stitches"
             [routerLink]="['/item/' + featured_item.id]"
             [queryParams]="{'refer':'/home'}"
         >{{ featured_item.name }}</button><br/>
-        <small>{{ featured_item.category }}</small>
+        <small class="category-text">{{ featured_item.category }}</small>
     </div>  
 
 </div>
+
+<div id="splash-1" class="splash-text">
+    <h2>Welcome to my Website</h2>    
+    <p>
+        <img
+            [lazyLoad]="'assets/page-assets/rose_new.svg'"
+            [defaultImage]="'/assets/page-assets/loading.svg'"
+        />
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sapiente tempore ullam commodi deserunt assumenda fugit illum esse necessitatibus fugiat ipsam iste cum maiores veniam, nobis facilis repellat corrupti natus voluptatum corporis aperiam modi harum! Unde ullam modi reiciendis expedita illo dolores deleniti atque aut! Minus libero iste impedit possimus officiis iusto culpa. Architecto, veritatis harum! Animi quo eos obcaecati debitis voluptatum sapiente nam quidem ipsam repellat, ut esse optio ipsum provident quos enim adipisci possimus eveniet tempora, consequatur ipsa quis architecto labore praesentium! Expedita fugit voluptates a facere itaque temporibus provident rerum quisquam laborum cumque quod, voluptas, beatae accusamus? Minus?
+    </p>
+</div>
+
+<hr class="stitch-top"/>
+
+<div id="splash-1" class="splash-text">
+    <h2>Jump to a Category</h2>
+    <div id="link-gallery">
+        <a *ngFor="let cat of itemService.categories"
+            class="stitches"
+            [routerLink]="['/category/' + cat]"
+        >{{cat}}</a>
+    </div>
+    <p>All pieces belong to a category. You can click a link above or use the top navigation menu.
+    You can also use the search bar if you have something in mind.</p>
+</div>
+
+<hr class="stitch-top"/>
+
+<div id="splash-1" class="splash-text">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum nam officia quia quidem tenetur iste voluptas illum at maxime nobis! Voluptatibus odio nesciunt numquam sapiente quisquam quos illum quidem asperiores temporibus, dolorem dolorum voluptates consequatur! Nihil veritatis fugit officia exercitationem laboriosam magnam perferendis. Pariatur, inventore tenetur eum soluta voluptates ducimus?</p>
+
+</div>
+

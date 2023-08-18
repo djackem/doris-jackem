@@ -1,28 +1,31 @@
 {"items": [
     {
-        "name": "test",
-        "desc": "test item",
-        "img": "duck.jpg",
-        "category": "duck",
-        "imgs":["duck.jpg", "duck.jpg", "duck.jpg"]
+        "name": "Basket of Bunnies",
+        "desc": "Basket of bunnies. 3 pieces",
+        "img": "bunny_basket_2.jpg",
+        "category": "Bunnies",
+        "imgs":["bunny_basket_3.jpg"]
     },
     {
-        "name": "Chicks",
-        "desc": "Baby Ducks 1",
-        "img": "chicks.jpg",
-        "category": "ducks"
+        "name": "Carrot Bunnie",
+        "desc": "Bunny with carrot. 1 piece",
+        "img": "carrot_bunnie_1.jpg",
+        "category": "Bunnies",
+        "imgs":["carrot_bunnie_2.jpg", "carrot_bunnie_3.jpg"]
     },
     {
-        "name": "Chicks",
-        "desc": "Baby Ducks 2",
-        "img": "chicks.jpg",
-        "category": "ducks"
+        "name": "Small Brown Bear",
+        "desc": "Small, brown, and a bear",
+        "img": "bear_2_1.jpg",
+        "category": "Bears",
+        "imgs":["bear_2_2.jpg"]
     },
     {
-        "name": "Chicks",
-        "desc": "Baby Ducks 3",
-        "img": "chicks.jpg",
-        "category": "ducks"
+        "name": "Bee",
+        "desc": "A bee",
+        "img": "bee_2.jpg",
+        "category": "Misc",
+        "imgs":["bee_2.jpg"]
     },
     {
         "name": "Chicks",
@@ -40,6 +43,15 @@
         "name": "test 2",
         "desc": "test item 2",
         "img": "tester.png",
-        "category": "nothing"
+        "category": "nothing",
+        "links": {
+            "Google": "https://www.google.com",
+            "YouTube": "https://www.youtube.com",
+            "YouTube1": "https://www.youtube.com",
+            "YouTube2": "https://www.youtube.com",
+            "YouTube3": "https://www.youtube.com",
+            "YouTube4": "https://www.youtube.com",
+            "YouTube5": "https://www.youtube.com"
+        }
     }
 ]}

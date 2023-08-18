@@ -16,14 +16,15 @@ main{ position: relative;}
         font-weight: 500 !important;        
         padding: 0.5rem;
         border: 2px solid black;
+        border-radius: 0px;
     }
     #search-field{
         flex: 1 1 0px;
         min-width: 0;
         outline: none;
         border-right-width: 0px !important;
-        border-top-left-radius: 0.35rem;
-        border-bottom-left-radius: 0.35rem;
+        border-top-left-radius: 0.35rem !important;
+        border-bottom-left-radius: 0.35rem !important;
     }
     #search-field.errors{
         border-color: red !important;
@@ -38,8 +39,8 @@ main{ position: relative;}
     #search-btn{        
         background: url('../../../assets/page-assets/mag_glass.svg');
         border-left-width: 0px !important;
-        border-top-right-radius: 0.35rem;
-        border-bottom-right-radius: 0.35rem; 
+        border-top-right-radius: 0.35rem !important;
+        border-bottom-right-radius: 0.35rem !important; 
     }
 
         .icon-btn{
@@ -54,14 +55,15 @@ main{ position: relative;}
 
 /************ Results ****************/
 #search-results{   
-    transform-origin: left top ;
+    transform-origin: left top;
     border-bottom-left-radius: .75rem;
     border-bottom-right-radius: .75rem;
-    border: 2px solid black;
+    /* border: 2px solid black; */
+    border-width: 2px;
     border-top-width: 0px;
     padding: var(--padd);
     position: absolute;
-    top: 100%;/* calc( 100% - var(--padd) ); */
+    top: calc( 100% + 2px );/* calc( 100% - var(--padd) ); */
     left: calc( var(--padd) + 4px);
     width: calc( 100% - 2rem - 8px );
     background: linear-gradient( rgba(230, 230, 230, 1),rgba(230, 230, 230, 0.95) );

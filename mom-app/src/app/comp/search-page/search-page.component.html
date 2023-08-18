@@ -1,13 +1,14 @@
 <main>
-    <h3>Search results for: "{{ search_string }}"</h3>
+    <h2>Search results for: "{{ search_string }}"</h2>
     <small>Showing {{ start_index }} - {{ end_index }} ({{ results.length }})</small>
     <br/><br/>
-    <div id="search-body">
+    <div id="search-body" class="stitches">
 
         <!-- Items -->
         <h3 *ngIf="categories.length">Categories</h3>
         <div *ngIf="categories.length" id="category-container">
             <button *ngFor="let category of categories"
+                class="stitches"
                 [routerLink]="category.url"
             >{{ category.text }}</button>
         </div>

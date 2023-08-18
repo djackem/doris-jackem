@@ -7,17 +7,21 @@
 </ng-template>
 
 <div *ngIf="!itemService.loading; else load_screen" id="content-layout">
-    <nav id="header">
-        <div id="logo">Logo</div>
+    <nav id="header" class="stitches">
+        <div id="logo"
+            [lazyLoad]="'/assets/page-assets/rose_new.svg'"
+        ></div>
 
         <div id="top-nav">
             <div id="nav-btn-container">
                 <button class="flex-child active"
+                    class="stitches"
                     [routerLink]="['/home']" 
                     routerLinkActive="active"
                 >Home</button>
     
                 <button class="flex-child"
+                    class="stitches"
                     [routerLink]="['/category']" 
                     routerLinkActive="active"
                 >Categories</button>            
@@ -34,6 +38,12 @@
         <router-outlet></router-outlet>
     </div>
 
-    <div id="footer">Footer</div>
+    <div id="footer" class="stitches">
+        <div id="socials">
+            <a href="https://www.facebook.com"><img src="../assets/page-assets/logo_fb.svg"/></a>
+            <a href="https://www.etsy.com"><img src="../assets/page-assets/logo_etsy.svg"/></a>
+        </div>
+        <h3>© Doris Jackem 2023</h3>
+    </div>
     
 </div>

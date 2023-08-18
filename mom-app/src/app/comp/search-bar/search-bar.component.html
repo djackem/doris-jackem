@@ -3,6 +3,7 @@
     <div id="search-bar-container">
         <input id="search-field" 
             #search_input
+            spellcheck="false"
             type="text"
             placeholder="Search Categories, Name, Description, etc" 
             [(ngModel)]="search_string"
@@ -11,18 +12,21 @@
             (focus)="onFocusEvent(true)"
             (blur)="onFocusEvent(false)"
         />
+
         <button id="search-clear" 
             class="icon-btn"
             (click)="onClearClick()"
         ></button>
+
         <button id="search-btn" 
             class="icon-btn"
             (click)="onSearchClick()"
         ></button>
+
     </div>
 
     <!-- Search Results -->
-    <div id="search-results" *ngIf="results || errors" [@slideInOut]>
+    <div id="search-results" *ngIf="results || errors" [@slideInOut] class="stitches">
 
         <ng-template #error>
             <h4>There was an error searching for this:</h4>

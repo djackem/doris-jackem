@@ -16,7 +16,7 @@ import { SearchBarComponent } from './comp/search-bar/search-bar.component';
 import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { SearchResultComponent } from './comp/search-result/search-result.component';
 import { SearchPageComponent } from './comp/search-page/search-page.component';
-
+import { KeyValuePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,8 @@ import { SearchPageComponent } from './comp/search-page/search-page.component';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    LazyLoadImageModule
+    LazyLoadImageModule,
+    KeyValuePipe,
   ],
   providers: [],
   bootstrap: [AppComponent]
