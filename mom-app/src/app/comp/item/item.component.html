@@ -1,17 +1,21 @@
-<!-- <div *ngIf="zoom_url" id="zoom-image-container" [@fadeInOut] >
+<div *ngIf="zoom_url" id="zoom-image-container" [@fadeInOut] 
+    (click)="onCloseClick()"
+>
     <div id="zoom-image-inner">
-        <img class="zoom-image"
+        <img class="zoom-image cursor-pointer"
             [lazyLoad]="zoom_url"
             [defaultImage]="'/assets/img/tester.png'"
+            
         />
-        <div id="close-btn"
+        <!-- <div id="close-btn"
             class="cursor-pointer"
             [defaultImage]="'/assets/page-assets/btn_x.svg'"
             [lazyLoad]="'/assets/page-assets/btn_x.svg'"
-            (click)="onCloseClick()"
-        ></div>
-    </div>        
-</div> -->
+            (click)="onCloseClick()"   
+        ></div> -->
+    </div>  
+    <h2>Click to Close</h2>      
+</div>
 
 <main>    
 
@@ -21,6 +25,10 @@
             class="stitches active"
         >Back to {{back_name}}</button>
         
+        <div *ngIf="item.note" id="extra-container">
+            <h3>Note:</h3>
+            <p>{{ item.note }}</p>
+        </div>
         
         <!-- Links -->
         <div *ngIf="item.links" id="links-container">
@@ -31,7 +39,7 @@
                     href="{{ link.value }}"
                 ><button class="stitches">{{link.key}}</button></a>
             </div>
-            <!-- <small>(You will be taken to an external site)</small> -->
+            <small>(You will be taken to an external site)</small>
         </div>
 
     </div>
@@ -43,37 +51,32 @@
         <h2>{{ item.name }}</h2><br/>
         <img
             id="main-image"
-            class="flex-child"
+            class="flex-child clickable"
+            (click)="onImageClick($event)"
             [lazyLoad]="item.img_src"
             [defaultImage]="'/assets/page-assets/loading.svg'"
         />
 
-        <!-- Description -->
-        <p *ngIf="item.desc">{{ item.desc }}</p><br/>
+        <div id="desc" *ngIf="item.desc">
+            <h3>Description:</h3>
+            {{ item.desc }}
+        </div>
+
+        <div id="extra" *ngIf="item.extra" class="stitches">
+            {{ item.extra }}
+        </div>
 
         <!-- Gallery -->
         <div *ngIf="item.imgs" class="img-gallery">
             <img *ngFor="let img of item.imgs"
+                class="cursor-pointer"
+                (click)="onImageClick($event)"
                 [lazyLoad]="img"
                 [defaultImage]="'/assets/page-assets/loading.svg'"
                 />
         </div>
-
-        <!-- Links -->
-        <!-- <div *ngIf="item.links" id="links-container">
-            <h3>Links:</h3>            
-            <div>
-                <a *ngFor="let link of item.links | keyvalue"
-                    href="{{ link.value }}"
-                >
-                    <button>{{link.key}}</button>
-                </a>
-            </div>
-            <small>(You will be taken to an external site)</small>
-        </div> -->
-
+        
     </div>
-
 </main>
 
 

@@ -70,10 +70,6 @@
     font-weight: 500;
 }
 
-
-
-
-
 #link-gallery{
     display: flex;
     flex-flow: row wrap;
@@ -89,5 +85,11 @@
     font-weight: 600;
     background-color: var(--button-active-color);
     flex: 1 1 auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .splash-text{
+        padding: 0.5rem;
+    }
 }
 

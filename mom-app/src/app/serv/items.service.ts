@@ -35,7 +35,9 @@ export class ItemsService {
             category: item.category || 'Missing',
             img_src: `assets/img/${item.img}` || 'Missing',
             imgs : item.imgs?.map( i => `assets/img/${i}`),
-            links: item.links ? item.links : undefined
+            links: item.links ? item.links : undefined,
+            note: item.note ? item.note : undefined,
+            extra: item.extra ? item.extra : undefined
           }
 
           // Add to category register

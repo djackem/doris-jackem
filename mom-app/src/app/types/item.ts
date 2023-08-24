@@ -6,4 +6,6 @@ export interface Item {
     img_src: string;
     imgs : string[] | undefined;
     links?: {[key: string]: string};
+    note?: string;
+    extra?: string;
 }

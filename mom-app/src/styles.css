@@ -49,6 +49,12 @@ hr{
   flex: 1 1 auto;
 }
 
+.bold-first::first-line{
+  font-weight: 600;
+  font-size: 20px;
+  letter-spacing: 0.05rem;
+}
+
 .cursor-pointer{ cursor:  pointer; }
 
 button{

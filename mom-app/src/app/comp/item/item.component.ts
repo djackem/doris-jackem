@@ -12,11 +12,11 @@ import { Item } from 'src/app/types/item';
   animations:[
     trigger('fadeInOut', [
       transition(':enter', [
-        style({opacity: '0', top: '100px'}),        
-        animate('150ms ease-in', style({ opacity: '1', top: '0px' }))        
+        style({opacity: '0', top: '0px' }),        
+        animate('150ms ease-in', style({ opacity: '1' }))        
       ]),
       transition(':leave', [
-        animate('150ms ease-in', style({ opacity: '0', top: '20px' }))        
+        animate('150ms ease-in', style({ opacity: '0' }))        
       ])
     ])
   ]
@@ -58,12 +58,12 @@ export class ItemComponent implements OnInit{
     this.item = this.itemService.GetItem(id);
   }
 
-  /* onImageClick(event:any){
+  onImageClick(event:any){
     this.zoom_url = event.target.src
   }
 
   onCloseClick(){
     this.zoom_url = undefined;
-  } */
+  }
 
 }
