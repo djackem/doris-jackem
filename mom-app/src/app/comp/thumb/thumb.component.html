@@ -1,9 +1,14 @@
 <!-- Lazy loaded background image -->
 <div class="thumb image-holder" 
+    [loadImg]="item.img_src" [loadBg]="true"
+    [routerLink]="['/item/', item.id]"
+    [queryParams]="{ refer: referral_url }"
+>
+<!-- <div class="thumb image-holder" 
     [lazyLoad]="item.img_src"
     [defaultImage]="'/assets/page-assets/loading.svg'"
     [routerLink]="['/item/', item.id]"
     [queryParams]="{ refer: referral_url }"
->
+> -->
     <span class="title thumb-title">{{ item.name }}</span>
 </div>

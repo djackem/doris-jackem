@@ -54,6 +54,8 @@
                     </li>
                 </ul>
                 <button *ngIf="results && results.length > 6"
+                    id="more-button"
+                    [ngClass]="'stitches active'"
                     (click)="onSearchClick()"
                     >See more results</button>
             </div>

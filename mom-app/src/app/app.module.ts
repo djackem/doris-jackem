@@ -17,6 +17,8 @@ import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { SearchResultComponent } from './comp/search-result/search-result.component';
 import { SearchPageComponent } from './comp/search-page/search-page.component';
 import { KeyValuePipe } from '@angular/common';
+import { LoadImgDirective } from './comp/load-img/load-img.directive';
+
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { KeyValuePipe } from '@angular/common';
     SearchBarComponent, 
     SearchResultComponent, 
     SearchPageComponent, 
+    LoadImgDirective,
   ],
   imports: [
     BrowserAnimationsModule,

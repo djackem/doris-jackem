@@ -2,6 +2,7 @@
     {
         "name": "Bee",
         "desc": "A bee",
+        "dim": "3in x 7ft x 9in",
         "img": "bee_1.jpg",
         "category": "Animals"
     },
