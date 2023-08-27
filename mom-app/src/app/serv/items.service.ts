@@ -56,7 +56,7 @@ export class ItemsService {
       }
       
     });
-    console.log(this.items_by_category)
+    //console.log(this.items_by_category)
   }
 
   //////////////////////// Categories ////////////////////
@@ -75,7 +75,6 @@ export class ItemsService {
 
   Search( txt: string ): SearchResult[] | null {
     const lowered = txt.toLowerCase(); 
-    console.log(lowered)   
     const results: SearchResult[] = [];
 
     this.categories.forEach( cat => {
@@ -101,8 +100,6 @@ export class ItemsService {
         })
       }
     });
-
-    console.log(results)
     return results.length ? results : null;
   }
 

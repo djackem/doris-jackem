@@ -1,6 +1,9 @@
 <!-- Lazy loaded background image -->
 <div class="thumb image-holder" 
-    [loadImg]="item.img_src" [loadBg]="true"
+    [loadImg]="item.img_src"
+    [loadBg]="true"
+    [useObserver]="true"
+    
     [routerLink]="['/item/', item.id]"
     [queryParams]="{ refer: referral_url }"
 >

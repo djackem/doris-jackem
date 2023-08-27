@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, NavigationEnd, Router } from '@angular/router';
 import { Subscription, filter, map } from 'rxjs';
 import { ItemsService } from 'src/app/serv/items.service';
+import { LoadImageService } from 'src/app/serv/load-image-service.service';
 import { Item } from 'src/app/types/item';
 
 @Component({
@@ -32,11 +33,11 @@ export class ItemComponent implements OnInit{
   constructor( 
     public itemService: ItemsService, 
     private router: Router,
-    private route: ActivatedRoute, 
-    ){}
+    private route: ActivatedRoute,
+    private loadImage: LoadImageService
+  ){}
   
   ngOnInit(){
-
     this.router.events.pipe( filter( e => e instanceof NavigationEnd ) )
       .subscribe( e =>{
         this.back_name = this.back_url ? this.back_url.split('/')[1] : 'missing';
@@ -52,14 +53,17 @@ export class ItemComponent implements OnInit{
   }
 
   getMyItem(){
-    console.log("GETTING ITEM")
     // Get item from id
     const id:number = Number(this.route.snapshot.paramMap.get('id'));
     this.item = this.itemService.GetItem(id);
   }
 
-  onImageClick(event:any){
-    this.zoom_url = event.target.src
+  onImageClick( event:any ){
+    if ( event.target.src.includes(this.loadImage.loadingImgUrl) ){
+      //console.log('Loading')
+    }else{
+      this.zoom_url = event.target.src;
+    }
   }
 
   onCloseClick(){
