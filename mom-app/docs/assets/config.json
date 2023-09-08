@@ -1,44 +1,148 @@
 {"items": [
     {
-        "name": "test",
-        "desc": "test item",
-        "img": "duck.jpg",
-        "category": "ducks"
+        "name": "Bee",
+        "desc": "A bee",
+        "dim": "3in x 7ft x 9in",
+        "img": "bee_1.jpg",
+        "dimensions": "1' 2\"",
+        "category": "Animals"
     },
     {
-        "name": "Chicks",
-        "desc": "Baby Ducks",
-        "img": "chicks.jpg",
-        "category": "ducks"
+        "name": "Blue Bear",
+        "desc": "A blue bear",
+        "img": "blueBear_1.jpg",
+        "category": "Animals"
     },
     {
-        "name": "Chicks",
-        "desc": "Baby Ducks",
-        "img": "chicks.jpg",
-        "category": "ducks"
+        "name": "Blue Bear 2",
+        "desc": "A blue bear",
+        "img": "blueBear_2_1.jpg",
+        "category": "Animals",
+        "imgs":["blueBear_2_2.jpg"]
     },
     {
-        "name": "Chicks",
-        "desc": "Baby Ducks",
-        "img": "chicks.jpg",
-        "category": "ducks"
+        "name": "Blue Cat",
+        "desc": "A blue cat",
+        "img": "blueCat_1.jpg",
+        "category": "Animals"
     },
     {
-        "name": "Chicks",
-        "desc": "Baby Ducks",
-        "img": "chicks.jpg",
-        "category": "ducks"
+        "name": "Bunny",
+        "desc": "A bunny with a carrot",
+        "img": "bunny_1.jpg",
+        "category": "Animals",
+        "imgs": ["bunny_2.jpg", "bunny_3.jpg"]
     },
     {
-        "name": "ducks",
-        "desc": "many ducks",
-        "img": "ducks.jpg",
-        "category": "ducks"
+        "name": "Cupcakes",
+        "desc": "Some cupcakes with different decorations",
+        "img": "cupcakes_2.jpg",
+        "category": "ducks",
+        "imgs": ["cupcake_1.jpg", "cupcake_2.jpg", "cupcake_3.jpg","cupcake_4.jpg", "cupcake_5.jpg"]
     },
     {
-        "name": "test 2",
-        "desc": "test item 2",
-        "img": "tester.png",
-        "category": "nothing"
+        "name": "Doggy",
+        "desc": "A good boy",
+        "img": "doggy_1.jpg",
+        "category": "Animals",
+        "imgs": ["doggy_2.jpg"]
+    },
+    {
+        "name": "Big Duck",
+        "desc": "A duck lady",
+        "img": "duck_1.jpg",
+        "category": "Animals",
+        "imgs": ["duck_2.jpg"]
+    },
+    {
+        "name": "Duckling",
+        "desc": "A baby duck",
+        "img": "duck_2_1.jpg",
+        "category": "Animals",
+        "imgs": ["duck_2_2.jpg"]
+    },
+    {
+        "name": "Tiny Duck",
+        "desc": "A tiny duck",
+        "img": "duck_3_1.jpg",
+        "category": "Animals",
+        "imgs": ["duck_3_2.jpg"]
+    },
+    {
+        "name": "White and Blue Fish",
+        "desc": "A blue and white fish",
+        "img": "fish_1.jpg",
+        "category": "Animals",
+        "imgs": ["fish_2.jpg"]
+    },
+    {
+        "name": "Blue Fish",
+        "desc": "A blue fish",
+        "img": "fish_2_1.jpg",
+        "category": "Animals",
+        "imgs": ["fish_2_2.jpg"]
+    },
+    {
+        "name": "Blue Fish",
+        "desc": "A blue fish",
+        "img": "fish_2_1.jpg",
+        "category": "Animals",
+        "imgs": ["fish_2_2.jpg"]
+    },
+    {
+        "name": "Gold Bear",
+        "desc": "The golden bear of legend",
+        "img": "goldBear_1.jpg",
+        "category": "Animals",
+        "imgs": ["goldBear_2.jpg"]
+    },
+    {
+        "name": "Panda Bear",
+        "desc": "A panda bear",
+        "img": "panda_1.jpg",
+        "category": "Animals",
+        "imgs": ["panda_2.jpg", "panda_3.jpg"]
+    },
+    {
+        "name": "Pink Bear",
+        "desc": "A pink bear",
+        "img": "pinkBear_1.jpg",
+        "category": "Animals",
+        "imgs": ["pinkBear_2.jpg"]
+    },
+    {
+        "name": "Pink Cat",
+        "desc": "A pink cat",
+        "img": "pinkCat_1.jpg",
+        "category": "Animals",
+        "imgs": ["pinkCat_2.jpg"]
+    },
+    {
+        "name": "Reindeer",
+        "desc": "A reindeer",
+        "img": "reindeer_1.jpg",
+        "category": "Animals",
+        "imgs": ["reindeer_2.jpg"]
+    },
+    {
+        "name": "Yellow Bear A",
+        "desc": "A yellow bear",
+        "img": "yellowBear_1.jpg",
+        "category": "Animals",
+        "imgs": ["yellowBear_2.jpg"]
+    },
+    {
+        "name": "Yellow Bear B",
+        "desc": "A yellow bear",
+        "img": "yellowBear_2_1.jpg",
+        "category": "Animals",
+        "imgs": ["yellowBear_2_2.jpg"]
+    },
+    {
+        "name": "Yellow Bear Small",
+        "desc": "A small yellow bear",
+        "img": "yellowBear_3_1.jpg",
+        "category": "Animals",
+        "imgs": ["yellowBear_3_2.jpg"]
     }
 ]}

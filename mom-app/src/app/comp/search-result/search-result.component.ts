@@ -6,10 +6,6 @@ import { SearchResult } from 'src/app/types/SearchResult';
   template: `
     <div class="search-result-container">
       <img *ngIf="data.item" [loadImg]="data.item.img_src" />
-      <!-- <img *ngIf="data.item"
-        [lazyLoad]="data.item.img_src"
-        [defaultImage]="'/assets/img/tester.png'"
-      /> -->
       <div>
         <h4>{{ data.text }}</h4>
         <small *ngIf="data.desc">{{ data.desc }}</small>

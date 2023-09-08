@@ -8,10 +8,13 @@ import { Item } from 'src/app/types/item';
   styleUrls: ['./splash.component.css']
 })
 export class SplashComponent implements OnInit{
-  constructor( public itemService: ItemsService ){}
   featured_item: Item;
+
+  constructor( public itemService: ItemsService ){}
+
   ngOnInit(){
     const random_item = this.itemService.GetRandom();
     this.featured_item = random_item;
   }
-}
+
+};;

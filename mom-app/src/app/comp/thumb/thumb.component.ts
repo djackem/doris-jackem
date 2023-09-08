@@ -11,9 +11,11 @@ export class ThumbComponent implements OnInit{
   @Input() item!: Item;
   image_loaded: boolean=false;
   referral_url!: string;
-  constructor( private router: Router ){}
+
+  constructor( private router: Router ){};
+
   ngOnInit(){
-    //let urls: string[] = this.router.url.split('/');        
-    this.referral_url = this.router.url;//!urls || !urls.length ? '.' : urls.join('.');
+    this.referral_url = this.router.url;
   }
-}
+
+};;

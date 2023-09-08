@@ -1,0 +1,17 @@
+{
+    "name": "Doggy",
+    "desc": "A good boy",
+    "img": "doggy_1.jpg",
+    "category": "Animals",
+    "extra": "This item may or may not contain nuts or soy",
+    "note": "This item is extremely dangerous and should be treated with extreme caution.",
+    "links": {
+        "Google": "https://www.google.com",
+        "YouTube": "https://www.youtube.com",
+        "YouTube1": "https://www.youtube.com",
+        "YouTube2": "https://www.youtube.com",
+        "YouTube3": "https://www.youtube.com",
+        "YouTube4": "https://www.youtube.com",
+        "YouTube5": "https://www.youtube.com"
+    }
+}

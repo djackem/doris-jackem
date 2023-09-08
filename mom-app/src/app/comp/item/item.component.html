@@ -49,35 +49,25 @@
 
         <!-- Main Image -->
         <h2>{{ item.name }}</h2><br/>
-        <!-- <img
-            id="main-image"
-            class="flex-child clickable"
-            (click)="onImageClick($event)"
-            [lazyLoad]="item.img_src"
-            [defaultImage]="'/assets/page-assets/loading.svg'"
-        /> -->
-
+        
         <img
             id="main-image"
             class="flex-child clickable"
             (click)="onImageClick($event)"
             loadImg="{{item.img_src}}"
-        />
+        />  
 
-        <!-- app-load-img
-            [id]="'main-image'"
-            [clas]="'flex-child'"
-            [url]="item.img_src"
-        ></app-load-img> -->
-
-        <!-- <img loadImg="item.img_src"> -->
-
-        <div id="desc" *ngIf="item.desc">
+        <div id="desc" *ngIf="item.desc" class="property-container">
             <h3>Description:</h3>
             {{ item.desc }}
         </div>
 
-        <div id="extra" *ngIf="item.extra" class="stitches">
+        <div id="dimensions" *ngIf="item.dimensions" class="property-container">
+            <h3>Dimensions:</h3>
+            {{ item.dimensions }}
+        </div>
+
+        <div id="extra" *ngIf="item.extra" class="stitches" class="property-container">
             {{ item.extra }}
         </div>
 

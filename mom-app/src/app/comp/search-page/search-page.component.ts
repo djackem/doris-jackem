@@ -15,35 +15,32 @@ export class SearchPageComponent implements OnInit{
     public router: Router, 
     public activatedRoute: ActivatedRoute,
     public itemService: ItemsService
-    ) {
-      this.router.events.pipe( filter( e => e instanceof NavigationEnd ) )
-      .subscribe( e =>{
-        this.GetContent();
-      }) 
-    }
+  ){};
+
+  ngOnInit(){
+    this.GetContent();
+
+    // Router events will trigger a reload
+    this.router.events.pipe( filter( e => e instanceof NavigationEnd ) )
+      .subscribe( e =>{ this.GetContent(); }) 
+  };
   
   search_string!: string;
   results!: SearchResult[];
   categories !: SearchResult[];
   items !: Item[];
   start_index: number = 0;
-  end_index: number = 10;
-  per_page: number = 10;
-
+  end_index: number = 0;
+  
   GetContent() {
     this.items = [];
     this.categories = [];
     this.search_string = this.activatedRoute.snapshot.url[1].path;
-
     const res = this.itemService.Search(this.search_string);
     const count = res?.length || 0;
     this.results = count ? res : [];
     
-    if (count < this.per_page){
-      this.per_page = count;
-      this.end_index = count;
-    }
-
+    // Separate items and categories from results for template
     for (let result of this.results ){
       if (result.item){
         this.items.push(result.item);
@@ -51,9 +48,9 @@ export class SearchPageComponent implements OnInit{
         this.categories.push(result);
       }
     }
-  }
 
-  ngOnInit(){
-    this.GetContent();
-  }
-}
+    this.end_index = this.results.length
+  };
+
+  
+};;
