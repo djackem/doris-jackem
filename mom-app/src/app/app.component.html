@@ -8,20 +8,30 @@
 
 <div *ngIf="!itemService.loading; else load_screen" id="content-layout">
     <nav id="header" class="stitches">
-        <div id="logo"
-            [lazyLoad]="'/assets/page-assets/rose_new.svg'"
-        ></div>
+        <!-- [lazyLoad]="'assets/page-assets/rose_new.svg'" -->
+        <div id="logo" 
+            [loadImg]="'assets/page-assets/rose_new.svg'"
+            [loadBg]="true"
+            >
+            <!-- <img [loadImg]="'assets/page-assets/rose_new.svg'"> -->
+        </div>
 
         <div id="top-nav">
-            <div id="nav-btn-container">
+
+            <div id="nav-btn-container"><!-- class="stitches" -->
+
+                <div id="nav-title">
+                    Doris Jackem
+                </div>
+
                 <button class="flex-child active"
-                    class="stitches"
+                    class="nav-button"
                     [routerLink]="['/home']" 
                     routerLinkActive="active"
                 >Home</button>
     
                 <button class="flex-child"
-                    class="stitches"
+                class="nav-button"
                     [routerLink]="['/category']" 
                     routerLinkActive="active"
                 >Categories</button>            
@@ -40,8 +50,8 @@
 
     <div id="footer" class="stitches">
         <div id="socials">
-            <a href="https://www.facebook.com"><img src="../assets/page-assets/logo_fb.svg"/></a>
-            <a href="https://www.etsy.com"><img src="../assets/page-assets/logo_etsy.svg"/></a>
+            <a href="https://www.facebook.com"><img [lazyLoad]="'assets/page-assets/logo_fb.svg'"/></a>
+            <a href="https://www.etsy.com"><img [lazyLoad]="'assets/page-assets/logo_etsy.svg'"/></a>
         </div>
         <h3>© Doris Jackem 2023</h3>
     </div>

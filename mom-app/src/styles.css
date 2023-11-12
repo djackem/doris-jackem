@@ -76,6 +76,11 @@ button.active{
   /* filter: drop-shadow(2px 2px 3px rgba(0,0,0, 0.15)); */
 }
 
+.nav-button{
+  border: none;
+  background-color: rgba(0,0,0, 0.05);
+}
+
 .stitches{
   border: 2px dashed rgba(0,0,0, 0.15);
   /* border-image: url('../src/assets/page-assets/stitches.svg') 20% / 5px / -1 space; */

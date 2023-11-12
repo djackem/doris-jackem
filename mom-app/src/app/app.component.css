@@ -11,10 +11,16 @@
         grid-template-areas: 
             "logo nav" 
             "search search" !important;
+        grid-template-columns: 50px 1fr !important;
     }
     #logo{
-        padding: 0.5rem 0 0 0 !important;
+        padding: 1rem 0px 0px 1rem !important;
+        background-position: left !important;
     } 
+
+    #nav-title{
+        align-self: center !important;
+    }
 }
 
 /************** Header ****************/
@@ -26,7 +32,7 @@
     width: 100%;   
     background-color: var(--header-color);
     display: grid;
-    grid-template-columns: clamp( 30px, 20%, 150px ) 1fr;
+    grid-template-columns: clamp( 30px, 20%, 90px ) 1fr;
     grid-template-rows: min-content 1fr;
     grid-template-areas: 
         "logo nav" 
@@ -37,29 +43,50 @@
         background-size: contain;
         background-origin: content-box;
         background-position: center;
-        padding: 1rem;
+        padding: 0.5rem;
+        padding-right: 0px;;
         background-repeat: no-repeat;
     }
 
     #top-nav{
-        width: min-content;
+        /* width: min-content; */
+        width: 100%;
         grid-area: nav;
-        display: flex;
+        /* display: flex;
         gap: 0.5rem;
         justify-content: flex-end;
-        align-content: center;
+        align-content: center; */
         
     }
     #top-nav > *{
         flex: 1 1 auto;
     }
 
+    
+
     #nav-btn-container{
         display: flex;
+        width: 100%;
         gap: 1rem;
         padding: 1rem;
         padding-bottom: 0px;
+
+        
+        gap: 0.5rem;
+        justify-content: flex-end;
+        align-content: center;
     }
+
+    #nav-title{
+        font-size: 24px;
+        font-weight: bolder;
+        margin-right: auto;
+        align-self: end;
+        line-height: 1.2rem;
+        font-family: 'Poppins', sans-serif;
+        letter-spacing: -0.04rem;
+    }
+    
 
     #search{
         grid-area: search;
@@ -86,9 +113,7 @@
     border-top-width: 2px;
     justify-content: space-between;
 }
-#footer h2{
-    
-}
+
 
 #socials{
     display: flex;

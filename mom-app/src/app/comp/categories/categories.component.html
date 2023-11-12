@@ -4,7 +4,7 @@
     <nav id="side-nav" class="stitches">
 
         <button *ngFor="let cat of itemService.categories"
-            class="stitches"
+            class="nav-button"
             [routerLink]="['/category/', cat]" 
             routerLinkActive="active"
         >{{ cat }}</button>
