@@ -1,4 +1,6 @@
 # Doris Jackem Personal Site
+https://djackem.github.io/doris-jackem/
+
 This is a json-driven site.
 All items have thier own page and will populate menus and galleries automatically. This enables github to be used on multiple computers and content can be created/read/updated/deleted easily by anyone with no skill required.
 
@@ -49,8 +51,11 @@ This is just a note for me
 
 >ng build
 
-Copy ./docs to ../docs
-Copy favicon to ../docs
+Copy 
+- index.html
+- /assets
+- favicon.ico
+to ../docs
 
 Push to github
 
