@@ -46,10 +46,16 @@ You will need something here for the item to be picked up by the app. If you hav
 - **note** A note about the item
 - **extra** An extra note
 
-## Updating Data
-This is just a note for me
+## Dev Notes
+This is just a notes for me
+
+> cd mom-app
+
+> npm run serve
 
 >ng build
+
+>npm run web
 
 Copy 
 - index.html
@@ -57,6 +63,5 @@ Copy
 - favicon.ico
 to ../docs
 
-Push to github
 
 
