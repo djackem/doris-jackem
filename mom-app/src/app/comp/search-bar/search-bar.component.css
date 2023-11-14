@@ -66,7 +66,7 @@ main{ position: relative;}
     top: calc( 100% + 2px );/* calc( 100% - var(--padd) ); */
     left: calc( var(--padd) + 4px);
     width: calc( 100% - 2rem - 8px );
-    background: linear-gradient( rgba(230, 230, 230, 1),rgba(230, 230, 230, 0.95) );
+    background: linear-gradient( rgba(230, 230, 230, 1),rgba(230, 230, 230, 0.99) );
     box-shadow: 
         rgba(0,0,0, 0.2) -3px 1px 4px,
         rgba(0,0,0, 0.2) 1px 3px 4px
