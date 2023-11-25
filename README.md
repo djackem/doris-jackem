@@ -1,5 +1,6 @@
 # Doris Jackem Personal Site
 https://djackem.github.io/doris-jackem/
+changed
 
 This is a json-driven site.
 All items have thier own page and will populate menus and galleries automatically. This enables github to be used on multiple computers and content can be created/read/updated/deleted easily by anyone with no skill required.
