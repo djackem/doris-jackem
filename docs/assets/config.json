@@ -1,10 +1,11 @@
-{"items": [
+{"items": [	
     {
         "name": "Bee",
-        "desc": "A bee updated",
+        "desc": "A bee updated again again",
         "dim": "3in x 7ft x 9in",
         "img": "bee_1.jpg",
-        "dimensions": "1' 2\"",
+        "dimensions": "1 foot",
+		"extra": "This item may or may not contain nuts or soy",
         "category": "Animals"
     },
     {
