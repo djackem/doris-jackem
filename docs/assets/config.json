@@ -7,6 +7,7 @@
         "dimensions": "1 foot",
 		"extra": "This item may or may not contain nuts or soy",
         "category": "Animals",
+		"imgs": ["cupcake_1.jpg", "cupcake_2.jpg", "cupcake_3.jpg","cupcake_4.jpg", "cupcake_5.jpg"],
 		"links": {
 			"nothing": "https://www.google.com",
 			"YouTube": "https://www.youtube.com",
