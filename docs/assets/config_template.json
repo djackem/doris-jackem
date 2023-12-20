@@ -3,6 +3,7 @@
     "desc": "A good boy",
     "img": "doggy_1.jpg",
     "category": "Animals",
+	"dimensions": "1' 2\"",
     "extra": "This item may or may not contain nuts or soy",
     "note": "This item is extremely dangerous and should be treated with extreme caution.",
     "links": {
