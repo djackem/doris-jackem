@@ -1,6 +1,6 @@
 {"items": [	
     {
-        "name": "x",
+        "name": "Name",
         "desc": "xxxxx",
         "dim": "3in x 7ft x 9in",
         "img": "bee_1.jpg",
@@ -29,12 +29,10 @@
     },
 	{
         "name": "Bee",
-        "desc": "A bee updated again again",
-        "dim": "3in x 7ft x 9in",
-        "img": "bee_1.jpg",
-        "dimensions": "1 foot",
-		"extra": "This item may or may not contain nuts or soy",
-        "category": "Animals"
+        "desc": "Bumble is ready to buzz his way into your heart.  Can be hung on window or door with ribbon ",
+        "dim": "size of a tennis ball",
+        "img": "bee_1.jpg",		        
+		"category": "Animals"
     },
     {
         "name": "Blue Bear",
