@@ -41,7 +41,6 @@ export class SearchBarComponent {
         this.search_string = "";
         this.results = null;
         this.errors = null;
-        console.log('kkk')
       });
   };
 

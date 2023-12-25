@@ -8,9 +8,10 @@ import { LoadImageService } from 'src/app/serv/load-image-service.service';
 export class LoadImgDirective implements OnInit, OnDestroy{
   @Input('loadImg') url: string;
   @Input() loadBg: boolean = false;
-  @Input() useObserver: boolean = false;
+  @Input() useObserver: boolean = true;
   isLoaded: boolean = false; 
-  private observer$: Subject<any> | undefined;
+  /* private observer$: Subject<any> | undefined; */
+  private subscription$: Subscription | undefined;
   
   constructor( 
     public loadService: LoadImageService,
@@ -18,72 +19,55 @@ export class LoadImgDirective implements OnInit, OnDestroy{
     public renderer: Renderer2 
   ){}
 
-  
-  ngOnChanges( changes: SimpleChanges ){ 
-    // Fire init if the url input has changed
-    if ( changes['url'] ){
+
+  // Fire init if the url input has changed
+  ngOnChanges( changes: SimpleChanges ){    
+    /* if ( changes['url'] ){
       if( changes['url']['firstChange'] ){
         return; // Init
       }else{
         this.ngOnInit();
       }
-    }
+    } */
+    this.ngOnInit();
   }
 
   ngOnInit() {
-    if ( !this.useObserver ){
-      this.LoadSrc();
-    }else{      
-      if( this.loadService.IsImageLoaded( this.url ) ){
-        this.LoadSrc();
-      }else{
-        if (this.isLoaded){
+    this.SetSrc(this.loadService.loadingImgUrl);
 
-        }else{
-          // Observer
-          this.observer$ = this.loadService.ElemObserve( this.elemRef.nativeElement );
-          this.observer$.subscribe( target =>{ 
-              if ( target === this.elemRef.nativeElement ){
-                this.LoadSrc();
-              }
-          });
-        }
-      }
-    }
+    // No observer - just load image right away
+    /* if( !this.useObserver ){
+      this.loadService.GetImage(this.url)
+        .then( res =>{
+          this.SetSrc(this.url);
+        });
+    }else{ */
+
+        // Observe
+        var observe_stream = this.loadService.ElemObserve( this.elemRef.nativeElement );
+        this.subscription$ = observe_stream.subscribe( target =>{ 
+            if ( target === this.elemRef.nativeElement ){
+              this.subscription$.unsubscribe();
+              this.subscription$ = undefined;
+              this.loadService.GetImage(this.url)
+                .then( res =>{
+                  this.SetSrc(this.url);
+                });              
+            }
+        });        
+    //}
   };
 
   ngOnDestroy(){
-    /* if (this.observer$) this.observer$.unsubscribe();
-    this.observer$ = undefined; */
+    if (this.subscription$) this.subscription$.unsubscribe();
+    this.subscription$ = undefined;
   };
 
-  LoadSrc(){    
-    if ( this.loadService.IsImageLoaded( this.url ) ){
-      // Image has been loaded already
-      if ( this.loadBg ){
-        this.renderer.setStyle(this.elemRef.nativeElement, 'background-image', `url(${this.url})`);
-      }else{
-        this.elemRef.nativeElement.src = this.url;
-      }
-      this.isLoaded = true;
+  SetSrc( url: string ){
+    if ( this.loadBg ){
+      this.renderer.setStyle(this.elemRef.nativeElement, 'background-image', `url(${url})`);
     }else{
-      // Wait for image to load, set src to loading image.
-      // Once loaded, set src to url
-      if ( this.loadBg ){
-        this.renderer.setStyle(this.elemRef.nativeElement, 'background-image', `url(${this.loadService.loadingImgUrl})`);
-      }else{
-        this.elemRef.nativeElement.src = this.loadService.loadingImgUrl;
-      }
-      this.loadService.GetImage( this.url )
-        .then( response => {
-          this.isLoaded = true;
-          if ( this.loadBg ){
-            this.renderer.setStyle(this.elemRef.nativeElement, 'background-image', `url(${response})`);
-          }else{
-            this.elemRef.nativeElement.src = response;
-          }
-        });
+      this.elemRef.nativeElement.src = url;
     }
-  };
-
+  }
 };;

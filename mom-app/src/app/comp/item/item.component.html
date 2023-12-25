@@ -73,11 +73,12 @@
 
         <!-- Gallery -->
         <div *ngIf="item.imgs" class="img-gallery">
+            
             <img *ngFor="let img of item.imgs"
                 class="cursor-pointer"
                 (click)="onImageClick($event)"
-                [lazyLoad]="img"
-                [defaultImage]="'/assets/page-assets/loading.svg'"
+                [loadImg]="img"
+                [useObserver]="false"
                 />
         </div>
         

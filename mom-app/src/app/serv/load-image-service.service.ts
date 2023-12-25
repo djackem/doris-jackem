@@ -6,13 +6,18 @@ import { Subject, delay, filter } from 'rxjs';
   providedIn: 'root'
 })
 export class LoadImageService implements OnInit, OnDestroy{
-  private LOADING_IMG_URL: string = 'assets/page-assets/loading.svg'; // * This is what will be shown while loading
+  
+  // * This is what will be shown while loading
+  private LOADING_IMG_URL: string = '/assets/page-assets/loading.svg';
+  
   private loaded: Set<string> = new Set();
   private observer: IntersectionObserver | undefined;
   private subject$ : Subject<HTMLElement> | undefined;
   
   ngOnInit(){    
-    this.GetImage( this.LOADING_IMG_URL );// Loading the loading image
+    this.GetImage( this.LOADING_IMG_URL ).then(
+      res => console.log(res)
+    );// Loading the loading image
   };
 
   ngOnDestroy() {
@@ -31,7 +36,7 @@ export class LoadImageService implements OnInit, OnDestroy{
       if ( this.loaded.has(src) ) res(src);
       const img = new Image();
       img.onload = () =>{
-        this.loaded.add( src );
+        //this.loaded.add( src );
         res( src );
       }
       img.src = src;
@@ -52,7 +57,8 @@ export class LoadImageService implements OnInit, OnDestroy{
     this.observer = new IntersectionObserver( entries => {
       for ( const entry of entries ){
         if (entry.isIntersecting || entry.intersectionRatio > 0){
-          const target = entry.target as HTMLElement;          
+          const target = entry.target as HTMLElement;
+          //this.GetImage(target.)
           this.subject$.next( target ); // Should fire in directive
           this.observer.unobserve(target);
         }

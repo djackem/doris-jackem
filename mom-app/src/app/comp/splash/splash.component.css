@@ -38,6 +38,12 @@
     top: -0.5rem;
 }
 
+#splash-thing{
+    background-color: var(--header-color);
+    display: flex;
+    padding: 1rem;
+}
+
 #item-btn{
     background-color: var(--button-active-color);
 }
@@ -54,9 +60,9 @@
     margin: 2rem;
 }
 
-#splash-1-inner{
-    /* background-color: rgba(0,0,0, 0.25); */
-}
+/* #splash-1-inner{
+    
+} */
 
 .splash-text p{
     display: inline-block;

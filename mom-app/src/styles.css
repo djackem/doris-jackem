@@ -7,8 +7,8 @@
   --accent-color: #D090F5;
   --header-color: #C1D8F5;
   --button-color: #D1CEF5;
-  --button-active-color: #F5E4DA;
-  --side-bar_color: #fff7cd;
+  --button-active-color: rgba(231, 205, 237, 1);
+  --side-bar_color: rgba(194, 217, 245, 0.4);
 }
 
 a{
@@ -100,4 +100,32 @@ button.active{
   flex: 1 1 auto;
   aspect-ratio: 16 / 9;
   width: 100%;
+}
+
+/******* Spinner */
+.loading-screen{
+  font-size: large;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -0.02rem;
+  font-weight: bold;
+  margin: 1rem;
+  position: relative;
+  padding-left: 2.5rem;
+}
+
+.loading-screen::before{
+  content:'';  
+  margin-right: 1rem;
+  position: absolute;
+  inset: 0 0;
+  box-sizing: border-box;
+  border: 5px solid var(--header-color);
+  border-top: 5px solid black;  
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  animation: spin 1s steps(8) infinite;
+}
+@keyframes spin{
+  to { transform: rotate(1turn); }
 }

@@ -1,28 +1,19 @@
 <ng-template #load_screen>
     <!-- This should be the same as what is in index.html -->
-    <div class="loading-screen">
-        <h3>Loading Config...</h3>
-        <div class="loader" style="margin-left:1rem;"></div>
-    </div>
+    <div class="loading-screen">Loading Config...</div>
 </ng-template>
 
 <div *ngIf="!itemService.loading; else load_screen" id="content-layout">
     <nav id="header" class="stitches">
-        <!-- [lazyLoad]="'assets/page-assets/rose_new.svg'" -->
         <div id="logo" 
             [loadImg]="'assets/page-assets/rose_new.svg'"
-            [loadBg]="true"
-            >
-            <!-- <img [loadImg]="'assets/page-assets/rose_new.svg'"> -->
+            [loadBg]="true">
         </div>
 
         <div id="top-nav">
 
-            <div id="nav-btn-container"><!-- class="stitches" -->
-
-                <div id="nav-title">
-                    Doris Jackem
-                </div>
+            <div id="nav-btn-container">
+                <div id="nav-title">Doris Jackem</div>
 
                 <button class="flex-child active"
                     class="nav-button"
