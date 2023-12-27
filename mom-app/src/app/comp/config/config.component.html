@@ -1,5 +1,7 @@
 <main>
+
     
+
     <div *ngFor="let item of items; let i=index">
         <app-config-item
             [item]="item"
@@ -10,4 +12,6 @@
 
     <h3>Final</h3>
     <pre id="json">{{json_final}}</pre>
+
+    <pre id="output" [ngClass]="{hidden: !output_visible}">{{ output_string }}</pre>
 </main>

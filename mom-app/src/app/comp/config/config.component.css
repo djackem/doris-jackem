@@ -1,5 +1,21 @@
 main{
     padding: 2rem;
+    position: relative;
+    padding-bottom: 100px;
+}
+
+#output{
+    position: fixed;
+    background-color:var(--accent-color);
+    width: 100%;
+    height: min-content;
+    z-index: 1000;
+    bottom: 0px;
+    left: 0px;
+    padding: 1rem;
+    color: white;
+    font-weight: 500;
+    font: inherit;
 }
 
 #json{

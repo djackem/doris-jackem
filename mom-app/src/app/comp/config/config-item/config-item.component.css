@@ -2,4 +2,78 @@ main{
     padding: 1rem;
     background-color: aliceblue;
     margin-bottom: 1rem;
+    border: 1px solid black;
 }
+
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+}
+.buttons h3{
+    margin-right: auto;
+}
+
+.content{
+    margin: 1rem 0px;
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    gap: 1rem;    
+}
+
+.images{
+    font-size: 16px;
+}
+
+.attribute-list{
+    font-size: 20px;
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-template-rows: min-content;
+    gap: 0.5rem;
+}
+.attribute-list *{
+    font-size: 16px;
+}
+.attribute-list span{
+    text-align: right;
+}
+
+.attribute-list textarea{    
+    resize: vertical;
+}
+textarea, input[type="text"], select{
+    font-family: inherit;
+    font-size: inherit;
+    padding: 0.2rem;
+    border: 2px solid grey;
+    border-radius: 3px;
+}
+
+.multiple-images{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+.multiple-images img{
+    height: 50px;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.link-menu-button{    
+    margin-top: 0.25rem;
+}
+.link-menu{
+    margin-top: 0.25rem;
+    display: grid;
+    grid-template-columns: 120px 1fr 80px;
+    gap: 0.25rem;
+}
+
+

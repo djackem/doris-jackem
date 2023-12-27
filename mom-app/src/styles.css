@@ -41,6 +41,12 @@ hr{
   grid-template-columns: 20% 1fr;
 }
 
+.hidden{
+  display: none !important;
+}
+.bolded{
+  font-weight: bold;
+}
 .flex{
   display: flex;
 }
@@ -57,7 +63,7 @@ hr{
 
 .cursor-pointer{ cursor:  pointer; }
 
-button{
+button, input[type="file"]{
   padding: 0.25rem 0.75rem;
   background-color: inherit;
   border-radius: 0.5rem;
@@ -67,8 +73,7 @@ button{
   font-weight: 600;
   transition: all 600ms;
   cursor: pointer;
-  letter-spacing: -0.01rem;
-  
+  letter-spacing: -0.01rem;  
 }
 
 button.active{

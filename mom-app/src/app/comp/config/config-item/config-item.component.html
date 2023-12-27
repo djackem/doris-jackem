@@ -15,14 +15,130 @@
 } -->
 
 
-<main>
-    <img [src]="item.img"/>
-    {{item.img}}
-    <input
-        (change)="UpdateItemValue($event, 'name')"
-        value="{{item.name}}"
-    />
+<main>  
+
+    <div class="buttons">
+        <h3>{{ item.name }}</h3>
+        <button 
+            (click)="OpenClick()"
+        >{{active_char }}</button>
+        
+    </div>
+
+    <div [ngClass]="{'content':true,  'hidden': !active }">
+
+        <div class="images">
+            <img [src]="'assets/img/'+ item.img"/><br/>
+            {{item.img}}<br/><br/>
+            <input 
+                (change)="OnMainImgChange($event)"
+                id="main-img-src" 
+                name="main-img-src" 
+                type="file"
+            >
+        </div>
+        
+        <div class="attribute-list">
+            <p></p><h3>Required Properties</h3>
+            <span class="bolded">Name:</span>
+            <input
+                type="text"
+                (change)="UpdateItemValue($event, 'name')"
+                value="{{item.name}}"
+            />  
+            
+            <span class="bolded">Description:</span>
+            <textarea
+                (change)="UpdateItemValue($event, 'desc')"            
+            >{{item.desc}}</textarea>
     
-    <p>{{item.desc}}</p>
+            <span class="bolded">Category:</span>
+            <input
+                type="text"
+                (change)="UpdateItemValue($event, 'category')"
+                value="{{item.category}}"
+            />
+
+            <p></p><h3>Optional Properties</h3>
+
+            <span>Dimensions:</span>
+            <input
+                type="text"
+                (change)="UpdateItemValue($event, 'dimensions')"
+                value="{{item.dimensions}}"
+            />
+
+            <span>Note:</span>
+            <input
+                type="text"
+                (change)="UpdateItemValue($event, 'note')"
+                value="{{item.note}}"
+            />
+
+            <span>Extra:</span>
+            <input
+                type="text"
+                (change)="UpdateItemValue($event, 'extra')"
+                value="{{item.extra}}"
+            />
+
+            
+            
+            <span>Images:</span>
+            <div>
+                <div class="multiple-images" *ngIf="has_images; else noImages">
+                    <img *ngFor="let s of item.imgs"
+                        [src]="'assets/img/' + s"
+                    >
+                </div>
+                <ng-template #noImages>No images set yet.<br/></ng-template>
+                
+                <input
+                    type="text"
+                    (change)="OnImagesChange($event)"
+                    type="file"
+                    multiple="multiple"
+                >
+            </div>
+
+            <span>Links:</span>
+            <div>
+                <div class="multiple-images" *ngIf="has_links; else noLinks">
+                    <img *ngFor="let s of item.imgs"
+                        [src]="'assets/img/' + s"
+                    >
+                </div>
+                <ng-template #noLinks><p>No links set yet.</p></ng-template>
+
+                <div>
+                    <div class="link-menu">                        
+                        <input 
+                            type="text" 
+                            placeholder="Button Text"
+                            [ngModel]="link_menu_text"
+                            (ngModelChange)="link_menu_text = $event"
+                            (change)="CheckLinkMenu()"
+                        >
+                        <input  
+                            type="text" 
+                            placeholder="Link Url"
+                            [ngModel]="link_menu_url"
+                            (ngModelChange)="link_menu_url = $event"
+                            (change)="CheckLinkMenu()"
+                        >
+                        <button
+                            (click)="CreateLink()"
+                            [disabled]="!link_menu_valid"
+                        >Add</button>                       
+                    </div>
+
+                    
+                </div>
+                
+                
+            </div>            
+    
+        </div>
+    </div>
     
 </main>
