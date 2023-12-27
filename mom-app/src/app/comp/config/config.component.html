@@ -1,6 +1,12 @@
 <main>
 
-    
+    <div id="tools">
+        <h3>Tools</h3>
+        <button
+            (click)="CopyItems()"
+        >Copy Items</button>
+        
+    </div>
 
     <div *ngFor="let item of items; let i=index">
         <app-config-item

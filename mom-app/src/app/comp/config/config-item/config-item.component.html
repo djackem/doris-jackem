@@ -103,10 +103,11 @@
 
             <span>Links:</span>
             <div>
-                <div class="multiple-images" *ngIf="has_links; else noLinks">
-                    <img *ngFor="let s of item.imgs"
-                        [src]="'assets/img/' + s"
-                    >
+                <div class="links" *ngIf="has_links; else noLinks">
+                    <div class="links-inner" *ngFor="let entry of item.links | keyvalue">
+                        <div class="link-name">{{ entry.key }}</div>
+                        <div>{{ entry.value }}</div>
+                    </div>
                 </div>
                 <ng-template #noLinks><p>No links set yet.</p></ng-template>
 

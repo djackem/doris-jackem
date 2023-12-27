@@ -18,6 +18,10 @@ export class ItemsService {
   
   public get ItemsByCategory(){ return this.items_by_category};
   public get Data(){ return this.data };
+
+  SetItems( new_items: any ){
+    this.items = new_items;
+  }
   
   constructor( http: HttpClient ) { 
     this.sub$ = http.get(this.url).subscribe( data => {

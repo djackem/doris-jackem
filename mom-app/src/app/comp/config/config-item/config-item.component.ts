@@ -54,7 +54,6 @@ export class ConfigItemComponent implements OnInit{
 
 
   UpdateItemValue(event:any, prop: string ){
-    console.log(this.item);
     this.UpdateJSON.emit({
       "index": this.index,
       "prop": prop,
@@ -64,13 +63,27 @@ export class ConfigItemComponent implements OnInit{
 
 
   CheckLinkMenu(){
-    this.link_menu_valid = this.link_menu_text.length>0 && this.link_menu_url.length>0;
-    
+    this.link_menu_valid = this.link_menu_text.length>0 && this.link_menu_url.length>0;    
   }
+
   CreateLink(){
     if (this.link_menu_valid){
+      //Build new dict 
+      let links = this.item.links ? {...this.item.links} : {};
+      links[this.link_menu_text] = this.link_menu_url;
+      this.item.links = links;
+      this.has_links = true;
+
+      // Reset Values
       this.link_menu_text = "";
       this.link_menu_url = "";
+      this.link_menu_valid = false;
+
+      this.UpdateJSON.emit({
+        "index": this.index,
+        "prop": "links",
+        "value":links
+      });
     }
   }
 

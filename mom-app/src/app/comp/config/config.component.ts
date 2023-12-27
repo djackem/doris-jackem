@@ -43,4 +43,10 @@ export class ConfigComponent implements OnInit {
     }    
   }
 
+  CopyItems(){
+    this.output_string = "Copied all items to clipboard.";
+    this.output_visible = true;
+    navigator.clipboard.writeText(JSON.stringify( this.data_copy, null, 2) );   
+  }
+
 }

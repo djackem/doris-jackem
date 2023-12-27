@@ -69,11 +69,20 @@ img{
 .link-menu-button{    
     margin-top: 0.25rem;
 }
-.link-menu{
+.link-menu, .links-inner{
     margin-top: 0.25rem;
     display: grid;
     grid-template-columns: 120px 1fr 80px;
     gap: 0.25rem;
+}
+
+.links-inner > *{
+    padding: 0.25rem;
+}
+.link-name{
+    border-radius: 3px;   
+    background-color: rgba(0,0,0,0.1);
+    text-align: center;
 }
 
 
