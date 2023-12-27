@@ -2,6 +2,7 @@ import { EventEmitter, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Item } from '../types/item';
 import { SearchResult } from '../types/SearchResult';
+import { Subscription } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +14,14 @@ export class ItemsService {
   private url: string = './assets/config.json';
   public loading: boolean = true;
   public loading_emitter: EventEmitter<boolean> = new EventEmitter();
+  private sub$:Subscription;
+  
+  public get ItemsByCategory(){ return this.items_by_category};
+  public get Data(){ return this.data };
   
   constructor( http: HttpClient ) { 
-    http.get(this.url).subscribe( data => {
+    this.sub$ = http.get(this.url).subscribe( data => {
+      this.sub$.unsubscribe();
       this.data = data;
       let id = 0;
 
@@ -32,7 +38,7 @@ export class ItemsService {
             name: item.name || 'Missing',
             desc: item.desc || 'Missing',
             category: item.category || 'Missing',
-            img_src: `assets/img/${item.img}` || 'Missing',
+            img: `assets/img/${item.img}` || 'Missing',
             imgs : item.imgs?.map( i => `assets/img/${i}`),
             dimensions: item.dimensions ? item.dimensions : undefined,
             links: item.links ? item.links : undefined,

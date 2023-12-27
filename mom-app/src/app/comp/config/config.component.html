@@ -1,0 +1,13 @@
+<main>
+    
+    <div *ngFor="let item of items; let i=index">
+        <app-config-item
+            [item]="item"
+            [index]="i"
+            (UpdateJSON)="Update($event)"
+        ></app-config-item>
+    </div>
+
+    <h3>Final</h3>
+    <pre id="json">{{json_final}}</pre>
+</main>

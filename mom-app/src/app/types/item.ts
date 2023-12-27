@@ -3,7 +3,7 @@ export interface Item {
     name: string;
     category: string;
     desc: string;
-    img_src: string;
+    img: string;
     imgs : string[] | undefined;
     dimensions?: string;
     links?: {[key: string]: string};

@@ -18,6 +18,8 @@ import { SearchResultComponent } from './comp/search-result/search-result.compon
 import { SearchPageComponent } from './comp/search-page/search-page.component';
 import { KeyValuePipe } from '@angular/common';
 import { LoadImgDirective } from './comp/load-img/load-img.directive';
+import { ConfigComponent } from './comp/config/config.component';
+import { ConfigItemComponent } from './comp/config/config-item/config-item.component';
 
 
 @NgModule({
@@ -31,7 +33,7 @@ import { LoadImgDirective } from './comp/load-img/load-img.directive';
     SearchBarComponent, 
     SearchResultComponent, 
     SearchPageComponent, 
-    LoadImgDirective,
+    LoadImgDirective, ConfigComponent, ConfigItemComponent,
   ],
   imports: [
     BrowserAnimationsModule,

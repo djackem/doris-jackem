@@ -5,10 +5,12 @@ import { CategoryComponent } from './comp/category/category.component';
 import { CategoriesComponent } from './comp/categories/categories.component';
 import { ItemComponent } from './comp/item/item.component';
 import { SearchPageComponent } from './comp/search-page/search-page.component';
+import { ConfigComponent } from './comp/config/config.component';
 
 const routes: Routes = [
   { path: '', component: SplashComponent },
   { path: 'home', component: SplashComponent },
+  { path: 'config', component: ConfigComponent },
   { path: 'item/:id', component: ItemComponent },
   { path: 'search/:str', component: SearchPageComponent },
   { path: 'category', component: CategoriesComponent, children: [
