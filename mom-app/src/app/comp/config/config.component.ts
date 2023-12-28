@@ -31,16 +31,49 @@ export class ConfigComponent implements OnInit {
     this.output_string = "Initialized.";
   }
 
-  Update(data){
+  /**
+   * @param data 
+   * object{
+   *    index: number, // Array index of item in data
+   *    prop: string,   // Property to change
+   *    value: any    // New value
+   * }
+   */
+  Update( data ){
+    this.output_visible = true;
     try{
       let old = this.data_copy.items[data.index][data.prop];
+
+      // Set new values    
       this.data_copy.items[data.index][data.prop] = data.value;    
-      this.json_final = JSON.stringify(this.data_copy, null, 2);      
-      this.output_visible = true;
-      this.output_string = `Changed: ( ${this.data_copy.items[data.index].name} ) : ${data.prop}\nfrom: ${old}\nto: ${data.value}`;
+      this.json_final = JSON.stringify(this.data_copy, null, 2);
+
+      // Build Output string      
+      let _to = (typeof data.value == "object") ? this.PrettyDict(data.value) : data.value;
+      let _from = (typeof old == "object") ? this.PrettyDict(old) : old;
+
+      // Falsy --> "nothing"
+      _to = !_to ? "nothing" : _to;
+      _from = !_from ? "nothing" : _from;
+
+      // Output to user
+      this.output_string = `Changed: ( ${this.data_copy.items[data.index].name} ) [ ${data.prop} ]\n\nfrom:\n${_from}\n\nto:\n${_to}`;
     }catch(E){
       this.output_string = `ERROR:\n${E}`
     }    
+  }
+
+    // Helper prettify the dictionary
+    PrettyDict( dict:Object ):string{
+      let ret = [];
+      for(const [key, value] of Object.entries(dict)){
+        ret.push(`${key} : ${value}`);
+      }
+      return ret.join('\n');
+    }
+
+  OutputClicked(){
+    this.output_visible = false;
   }
 
   CopyItems(){

@@ -23,7 +23,6 @@ export class ConfigItemComponent implements OnInit{
     this.has_links = this.item.links ? true : false;
   }
 
-
   OpenClick(){
     this.active = !this.active;
     this.active_char = this.active ? "-" : "+";
@@ -52,7 +51,6 @@ export class ConfigItemComponent implements OnInit{
     this.ngOnInit();
   }
 
-
   UpdateItemValue(event:any, prop: string ){
     this.UpdateJSON.emit({
       "index": this.index,
@@ -60,7 +58,6 @@ export class ConfigItemComponent implements OnInit{
       "value": event.target.value
     });
   }
-
 
   CheckLinkMenu(){
     this.link_menu_valid = this.link_menu_text.length>0 && this.link_menu_url.length>0;    
