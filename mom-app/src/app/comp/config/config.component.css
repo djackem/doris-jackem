@@ -31,3 +31,33 @@ main{
     gap: 1rem;
     align-items: center;
 }
+
+#new-item{    
+    width: 75%;    
+    left: 50%;
+    gap: 1rem;
+    transform: translateX(-50%);    
+    position: absolute;
+    background-color: white;
+    border: 2px solid black;
+    padding: 2rem;
+}
+#new-item-inner{
+    margin-top: 1rem;
+    display: grid;
+    padding: 1rem;
+    gap: 1rem;
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: min-content;
+}
+#new-item-inner > label{
+    text-align: right;
+    font-weight: 500;
+}
+#new-item-inner > input, #new-item-inner > textarea{
+    border: 1px solid black;
+    padding: 0.25rem;
+}
+#new-item-inner > textarea{
+    resize: vertical;
+}

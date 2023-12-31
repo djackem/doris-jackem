@@ -2,13 +2,53 @@
 
     <div id="tools">
         <h3>Tools</h3>
-        <button
-            (click)="CopyItems()"
-        >Copy Items</button>
+        <button (click)="CopyItems()">Copy Items</button>
+        <button (click)="show_new_item=!show_new_item">New Item</button>
         
     </div>
 
     <!-- Items -->
+    <div id="new-item" [ngClass]="{'hidden': !show_new_item}">        
+        <h3>Create new Item</h3>
+
+        <div id="new-item-inner">
+            <label for="new-name">Name</label>
+            <input id="new-name" 
+                name="new-name" 
+                type="text" 
+                [(ngModel)]="new_name"
+                (change)="CheckNew($event)"
+            />
+
+            <label for="new-desc">Description</label>
+            <textarea id="new-desc" 
+                name="new-desc" 
+                [(ngModel)]="new_desc" 
+                (change)="CheckNew($event)"
+            ></textarea>
+
+            <label for="new-category">Category</label>
+            <input id="new-category" 
+                name="new-cat" 
+                type="text"
+                [(ngModel)]="new_cat"
+                (change)="CheckNew($event)"
+            />
+
+            <label for="new-img-src">Image</label>
+            <input 
+                id="new-img-src" 
+                (change)="SetNewFile($event)"
+                name="new-img-src" 
+                type="file"
+            >
+
+            
+        </div>
+        <br/>       
+        <button [disabled]="!new_valid" (click)="NewItem()">Create New Item</button>
+    </div>
+
     <div *ngFor="let item of items; let i=index">
         <app-config-item
             [item]="item"

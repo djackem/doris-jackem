@@ -8,8 +8,10 @@ import { Item } from 'src/app/types/item';
 })
 export class ConfigItemComponent implements OnInit{
   @Input() index: number;
-  @Input() item: Item;
+  @Input() item: Item | null;
   @Output() UpdateJSON = new EventEmitter<any>();  
+  @Output() NewItemEmitter = new EventEmitter<any>();  
+  
   active = false;
   active_char = "+";
   has_images: boolean;
@@ -21,6 +23,10 @@ export class ConfigItemComponent implements OnInit{
   ngOnInit(){
     this.has_images = this.item.imgs ? this.item.imgs.length>0 : false;
     this.has_links = this.item.links ? true : false;
+
+    if (this.item == null){
+      this.item = { id:999, name: "", category:"", desc: "", img:"", imgs:[] };
+    }
   }
 
   OpenClick(){

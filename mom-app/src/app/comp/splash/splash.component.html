@@ -1,10 +1,7 @@
 
 <div id="splash-wrapper">
 
-    <img id="spash-image"
-        [loadImg]="featured_item.img"
-        
-    />
+    <img id="spash-image" [loadImg]="featured_item.img"/>
 
     <div id="splash-content">
         <h1>Doris Jackem</h1>
@@ -26,12 +23,13 @@
 <div id="splash-1" class="splash-text">
     <h1>Welcome to my Website</h1>    
     <p id="splash-1-inner" class="bold-first">
-        <img
+        <!-- <img
             [lazyLoad]="'assets/page-assets/rose_new.svg'"
             [defaultImage]="'/assets/page-assets/loading.svg'"
-        />
+        /> -->
         I create hand-made knitting and cross-stitch crafts. This site is a collection of pieces that I have made recently, some for sale and some for display.
-        If a piece is for sale, you will see a link to an external site to take you to the vendor. 
+        If a piece is for sale, you will see a link to an external site to take you to the vendor. Thanks for visiting my site!
+        <img id="signature" src="assets/page-assets/sig.svg"/>
     </p>
 </div>
 
@@ -39,8 +37,8 @@
     
 </div> -->
 
-<div id="splash-2" class="splash-text">
-    <h2>Jump to a Category</h2>
+<div id="splash-2" class="splash-text stitches">
+    <h3>Jump to a Category</h3>
     <div id="link-gallery">
         <a *ngFor="let cat of itemService.categories"
             class="stitches"
@@ -51,7 +49,7 @@
     You can also use the search bar if you have something in mind.</p>
 </div>
 
-<hr class="stitch-top"/>
+<!-- <hr class="stitch-top"/> -->
 
 <div id="splash-3" class="splash-text">
     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorum nam officia quia quidem tenetur iste voluptas illum at maxime nobis! Voluptatibus odio nesciunt numquam sapiente quisquam quos illum quidem asperiores temporibus, dolorem dolorum voluptates consequatur! Nihil veritatis fugit officia exercitationem laboriosam magnam perferendis. Pariatur, inventore tenetur eum soluta voluptates ducimus?</p>
