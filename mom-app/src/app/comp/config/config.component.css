@@ -4,6 +4,55 @@ main{
     padding-bottom: 100px;
 }
 
+#title{
+    background-color: rgba(0,0,0, 0.1);
+    padding: 1rem;
+    border-radius: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap: 1rem;
+}
+#title-text{
+    margin-right: auto;
+    
+}
+
+#categories{
+    padding: 1rem;
+    font-size: 18px;
+}
+#categories-inner{
+    display: flex;
+    flex-flow: row wrap;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    max-width: 100%;
+}
+#categories-inner > p{
+    width: 100%;
+    font-size: 14px;
+}
+/* #categories-inner > *{
+    padding: 0.5rem 1rem;
+    background-color: rgba(0,0,0, 0.1);
+    border-radius: 3px;
+} */
+#new-cat{
+    margin-top: 0.25rem;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+#new-cat > input{
+    outline: none;
+    border: 2px solid rgba(0,0,0, 0.5);
+    border-radius: 3px;
+    font-size: 16px;
+    padding: 0.25rem !important;
+}
+
 #output{
     position: fixed;
     background-color:var(--accent-color);
@@ -43,6 +92,7 @@ main{
     padding: 2rem;
 }
 #new-item-inner{
+    position: relative;
     margin-top: 1rem;
     display: grid;
     padding: 1rem;
@@ -50,13 +100,24 @@ main{
     grid-template-columns: 100px 1fr;
     grid-template-rows: min-content;
 }
+#new-item-inner > #close{
+    position: absolute;
+    top: -60px;
+    right: 0px;
+    width: 45px;
+    height: 45px;
+    padding: 0.25rem;
+    color: white;
+}
+
 #new-item-inner > label{
     text-align: right;
-    font-weight: 500;
+    /* font-weight: 500; */
 }
-#new-item-inner > input, #new-item-inner > textarea{
+input, textarea{
     border: 1px solid black;
     padding: 0.25rem;
+    font-family: inherit;
 }
 #new-item-inner > textarea{
     resize: vertical;

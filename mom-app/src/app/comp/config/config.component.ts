@@ -21,6 +21,11 @@ export class ConfigComponent implements OnInit {
   new_img: string = "";
   new_valid: boolean = false;
 
+  delete_category: string = null;
+  selected_category: any;
+  new_category: string = "";
+  categories: string[];
+
   constructor( public itemService: ItemsService ){}
   
   // On Scroll, hide output
@@ -29,14 +34,58 @@ export class ConfigComponent implements OnInit {
       this.output_visible = false;
     }
 
-  ngOnInit(){    
+  ngOnInit(){
     // Copy items from service
     this.data_copy = JSON.parse(JSON.stringify(this.itemService.Data));
     this.json_final = JSON.stringify(this.data_copy, null, 2);
+    this.categories = [];
     for( let item of this.data_copy["items"]){
-      this.items.push(item);
+      this.items.push(item);      
+      if ( this.categories.indexOf(item.category) == -1 ){
+        this.categories.push(item.category);
+      }
     }    
     this.output_string = "Initialized.";
+  }
+
+
+  DeleteCategory( cat: string ){
+    if (this.delete_category){      
+      this.categories.splice(this.categories.indexOf(this.delete_category), 1);      
+      let output = [];
+      
+      // Check if we will have anything left
+      let miss = 'missing';
+      let change_cat = this.categories.length ? this.categories[0] : miss;
+      if (change_cat == miss && this.categories.indexOf(miss) == -1){
+        this.categories.push(miss);
+      }
+
+      // Check item categories and change them to a default
+      for ( let item of this.items ){
+        if ( item.category==this.delete_category ){
+          output.push(` ${item.name}:${item.category} --> ${change_cat}`);
+          item.category = change_cat;
+        }
+      }
+
+      // Output
+      this.output_string = `Deleted Category: ${this.delete_category}`;
+      this.output_visible = true;
+      if ( output.length ){
+        this.output_string += `\nChanged item Categories:\n${output.join('\n')}`;
+      }
+
+      this.delete_category = null;
+    }else{
+      // Clicked once
+      this.delete_category = cat;
+    }
+  }
+
+  NewCategory(){    
+    this.categories.push(this.new_category);
+    this.new_category = "";
   }
 
   /**
@@ -65,7 +114,7 @@ export class ConfigComponent implements OnInit {
       _from = !_from ? "nothing" : _from;
 
       // Output to user
-      this.output_string = `Changed: ( ${this.data_copy.items[data.index].name} ) [ ${data.prop} ]\n\nfrom:\n${_from}\n\nto:\n${_to}`;
+      this.output_string = `Changed: ${this.data_copy.items[data.index].name}.${data.prop}\n\nfrom:\n${_from}\n\nto:\n${_to}`;
     }catch(E){
       this.output_string = `ERROR:\n${E}`
     }    
@@ -79,6 +128,26 @@ export class ConfigComponent implements OnInit {
       }
       return ret.join('\n');
     }
+
+  Delete( i:number ){
+    try{
+      let item = this.items[i].name;
+
+      this.data_copy.items.splice( i, 1 );
+      this.json_final = JSON.stringify(this.data_copy, null, 2);
+      
+      this.items=[];
+      for( let item of this.data_copy["items"]){
+        this.items.push(item);
+      }
+      
+      this.output_visible = true;
+      this.output_string = `Deleted ${item}.`;
+
+    }catch(E){
+      console.log(`Error Deleting ${i}\n${E}`);
+    }
+  }
 
   OutputClicked(){
     this.output_visible = false;
@@ -98,7 +167,11 @@ export class ConfigComponent implements OnInit {
   }
 
   CheckNew( $event ){
-    this.new_valid = this.new_name.length>0 && this.new_desc.length>0 && this.new_cat.length>0 && this.new_img.length>0;
+    this.new_valid = 
+      this.new_name.length>0 && 
+      this.new_desc.length>0 && 
+      this.selected_category &&
+      this.new_img.length>0;    
   }
 
   // Actually creates the new item and registers it
@@ -107,9 +180,9 @@ export class ConfigComponent implements OnInit {
       name: this.new_name,
       desc: this.new_desc,
       img: this.new_img,
-      category: this.new_cat
-    }    
-
+      category: this.selected_category
+    }
+    
     // Register new item
     this.items.push(item);
     this.data_copy.items.push(item);
@@ -119,6 +192,10 @@ export class ConfigComponent implements OnInit {
     this.output_string = `Created New Item: ${this.new_name}`;
 
     // Housekeeping
+    this.CloseNew();
+  }
+
+  CloseNew(){
     this.new_name = "";
     this.new_desc = "";
     this.new_img = "";

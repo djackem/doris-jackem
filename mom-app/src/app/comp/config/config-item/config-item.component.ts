@@ -9,8 +9,10 @@ import { Item } from 'src/app/types/item';
 export class ConfigItemComponent implements OnInit{
   @Input() index: number;
   @Input() item: Item | null;
+  @Input() categories: string[];
   @Output() UpdateJSON = new EventEmitter<any>();  
-  @Output() NewItemEmitter = new EventEmitter<any>();  
+  @Output() NewItemEmitter = new EventEmitter<any>();
+  @Output() DeleteMeEmitter = new EventEmitter<any>();
   
   active = false;
   active_char = "+";
@@ -19,6 +21,9 @@ export class ConfigItemComponent implements OnInit{
   link_menu_valid: boolean=false;
   link_menu_text: string = "";
   link_menu_url: string = "";
+
+  delete_counter: number = 0;
+  delete_text: string = "Delete";
 
   ngOnInit(){
     this.has_images = this.item.imgs ? this.item.imgs.length>0 : false;
@@ -66,7 +71,7 @@ export class ConfigItemComponent implements OnInit{
   }
 
   CheckLinkMenu(){
-    this.link_menu_valid = this.link_menu_text.length>0 && this.link_menu_url.length>0;    
+    this.link_menu_valid = this.link_menu_text.length>0 && this.link_menu_url.length>0 ;    
   }
 
   CreateLink(){
@@ -88,6 +93,21 @@ export class ConfigItemComponent implements OnInit{
         "value":links
       });
     }
+  }
+
+  // Delete button
+  ResetDelete(){
+    this.delete_text = `Delete`;
+    this.delete_counter = 0;
+  }
+
+  DeleteMe(){
+    if (++this.delete_counter <= 1){      
+      this.delete_text = `Confirm Delete`;
+    }else{
+      this.DeleteMeEmitter.emit( this.index );
+    }
+    
   }
 
 }

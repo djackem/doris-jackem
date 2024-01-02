@@ -19,10 +19,10 @@
 
     <div class="buttons">
         <h3>{{ item.name }}</h3>
-        <button 
+        <button
+            class="toggle"
             (click)="OpenClick()"
-        >{{active_char }}</button>
-        
+        >{{active_char }}</button>        
     </div>
 
     <div [ngClass]="{'content':true,  'hidden': !active }">
@@ -30,34 +30,59 @@
         <div class="images">
             <img [src]="'assets/img/'+ item.img"/><br/>
             {{item.img}}<br/><br/>
-            <input 
+            
+            <!-- Hidden file input (template ref trick) -->
+            <input
+                #mainImgInput
                 (change)="OnMainImgChange($event)"
                 id="main-img-src" 
                 name="main-img-src" 
                 type="file"
+                class="hidden"                
             >
+            <div class="left-buttons">
+                <button
+                    (click)="mainImgInput.click()"
+                >Choose Main Image</button>
+
+                <button
+                    (click)="DeleteMe()"
+                    (focusout)="ResetDelete()"
+                    style="background-color: rgba(255, 0, 0, 0.15); margin-top: 1rem; "
+                >{{delete_text}}</button>
+                <p *ngIf="delete_counter>0">Click again to delete this entire item.</p>
+            </div>
+            
         </div>
         
         <div class="attribute-list">
             <p></p><h3>Required Properties</h3>
-            <span class="bolded">Name:</span>
+            <span>Name:</span>
             <input
                 type="text"
                 (change)="UpdateItemValue($event, 'name')"
                 value="{{item.name}}"
             />  
             
-            <span class="bolded">Description:</span>
+            <span >Description:</span>
             <textarea
                 (change)="UpdateItemValue($event, 'desc')"            
             >{{item.desc}}</textarea>
     
-            <span class="bolded">Category:</span>
-            <input
+            <span>Category:</span>
+            <!-- <input
                 type="text"
                 (change)="UpdateItemValue($event, 'category')"
                 value="{{item.category}}"
-            />
+            /> -->
+            <select
+                (change)="UpdateItemValue($event, 'category')"
+            >
+                <option *ngFor="let cat of categories"
+                    [value]="cat"
+                    [selected]="cat == item.category"                    
+                >{{cat}}</option>
+            </select>
 
             <p></p><h3>Optional Properties</h3>
 

@@ -111,11 +111,23 @@
     align-items: center;
     border-width: 0;
     border-top-width: 2px;
-    justify-content: space-between;
+    justify-content: right;
 }
 
+#semi-link{
+    font-size: 10px;
+    margin-right: 2rem;
+    background-color: rgba(0,0,0, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+}
+#semi-link a{
+    font-weight: bolder;
+    font-style: italic;
+}
 
 #socials{
+    margin-right: auto;
     display: flex;
     gap: 0.5rem;
 }

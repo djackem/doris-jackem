@@ -134,3 +134,16 @@ button.active{
 @keyframes spin{
   to { transform: rotate(1turn); }
 }
+
+.close-btn{
+  cursor: pointer;
+  background-image: url('assets/page-assets/btn_x.svg');
+  background-size: cover;
+}
+
+.config-select{
+  padding: 0.25rem;
+  font-size: inherit;
+  border: 1px solid black;
+  outline: none;
+}

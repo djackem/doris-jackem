@@ -8,7 +8,7 @@ import { Subject, delay, filter } from 'rxjs';
 export class LoadImageService implements OnInit, OnDestroy{
   
   // * This is what will be shown while loading
-  private LOADING_IMG_URL: string = '/assets/page-assets/loading.svg';
+  private LOADING_IMG_URL: string = 'assets/page-assets/loading.svg';
   
   private loaded: Set<string> = new Set();
   private observer: IntersectionObserver | undefined;
