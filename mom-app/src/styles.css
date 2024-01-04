@@ -21,6 +21,8 @@ body{
     font-family: 'Inter', sans-serif;
     box-sizing: border-box;
     height: 100%;
+    width: 100%;
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6{
@@ -30,6 +32,17 @@ h1, h2, h3, h4, h5, h6{
 
 hr{
   margin: 0.25rem 4rem;
+}
+
+pre{
+  font: inherit;
+}
+
+.ghost{
+  visibility: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
 }
 
 .bg-white{ background-color: white; }
@@ -68,7 +81,7 @@ button, input[type="file"]{
   background-color: inherit;
   border-radius: 0.5rem;
   font-family: 'Poppins', sans-serif;
-  color: #5b5b5b;
+  /* color: #5b5b5b; */
   font-size: 18px;
   font-weight: 600;
   transition: all 600ms;

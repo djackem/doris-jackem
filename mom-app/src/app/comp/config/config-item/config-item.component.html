@@ -15,7 +15,7 @@
 } -->
 
 
-<main>  
+<main id="main">  
 
     <div class="buttons">
         <h3>{{ item.name }}</h3>
@@ -25,7 +25,7 @@
         >{{active_char }}</button>        
     </div>
 
-    <div [ngClass]="{'content':true,  'hidden': !active }">
+    <div id="content" [ngClass]="{'hidden': !active }">
 
         <div class="images">
             <img [src]="'assets/img/'+ item.img"/><br/>
@@ -65,16 +65,11 @@
             />  
             
             <span >Description:</span>
-            <textarea
+            <textarea                
                 (change)="UpdateItemValue($event, 'desc')"            
-            >{{item.desc}}</textarea>
+                [value]="item.desc"></textarea>
     
-            <span>Category:</span>
-            <!-- <input
-                type="text"
-                (change)="UpdateItemValue($event, 'category')"
-                value="{{item.category}}"
-            /> -->
+            <span>Category:</span>            
             <select
                 (change)="UpdateItemValue($event, 'category')"
             >
@@ -106,8 +101,6 @@
                 (change)="UpdateItemValue($event, 'extra')"
                 value="{{item.extra}}"
             />
-
-            
             
             <span>Images:</span>
             <div>
@@ -131,13 +124,24 @@
                 <div class="links" *ngIf="has_links; else noLinks">
                     <div class="links-inner" *ngFor="let entry of item.links | keyvalue">
                         <div class="link-name">{{ entry.key }}</div>
-                        <div>{{ entry.value }}</div>
+                        <div class="link-truncated">{{ entry.value }}</div>
+                        <button
+                            [ngStyle]="link_delete_key==entry.key && {'background-color':'rgba(255,0,0, 0.1)'}"
+                            (click)="DeleteLink(entry.key)"
+                            (focusout)="link_delete_key=null"
+                        >Delete</button>
                     </div>
                 </div>
+
                 <ng-template #noLinks><p>No links set yet.</p></ng-template>
 
+                <div 
+                    *ngIf="link_delete_key"
+                    class="link-msg"
+                >Click again to delete the {{link_delete_key}} link.</div>
+
                 <div>
-                    <div class="link-menu">                        
+                    <div class="link-menu">
                         <input 
                             type="text" 
                             placeholder="Button Text"
@@ -154,13 +158,9 @@
                         >
                         <button
                             (click)="CreateLink()"
-                            [disabled]="!link_menu_valid"
                         >Add</button>                       
-                    </div>
-
-                    
-                </div>
-                
+                    </div>                    
+                </div>                
                 
             </div>            
     

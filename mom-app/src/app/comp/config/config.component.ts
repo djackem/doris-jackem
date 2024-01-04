@@ -85,6 +85,8 @@ export class ConfigComponent implements OnInit {
 
   NewCategory(){    
     this.categories.push(this.new_category);
+    this.output_visible = true;
+    this.output_string = `Created new category: ${this.new_category}`;
     this.new_category = "";
   }
 
@@ -114,9 +116,9 @@ export class ConfigComponent implements OnInit {
       _from = !_from ? "nothing" : _from;
 
       // Output to user
-      this.output_string = `Changed: ${this.data_copy.items[data.index].name}.${data.prop}\n\nfrom:\n${_from}\n\nto:\n${_to}`;
+      this.output_string = `Changed: ${this.data_copy.items[data.index].name}.${data.prop}\n${_from} --> ${_to}`;
     }catch(E){
-      this.output_string = `ERROR:\n${E}`
+      this.output_string = `ERROR:\n${E}`;
     }    
   }
 
@@ -129,6 +131,7 @@ export class ConfigComponent implements OnInit {
       return ret.join('\n');
     }
 
+  // Delete item at index i (this.items[i])
   Delete( i:number ){
     try{
       let item = this.items[i].name;
@@ -149,9 +152,6 @@ export class ConfigComponent implements OnInit {
     }
   }
 
-  OutputClicked(){
-    this.output_visible = false;
-  }
 
   CopyItems(){
     this.output_string = "Copied all items to clipboard.";

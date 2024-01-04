@@ -20,6 +20,7 @@ import { KeyValuePipe } from '@angular/common';
 import { LoadImgDirective } from './comp/load-img/load-img.directive';
 import { ConfigComponent } from './comp/config/config.component';
 import { ConfigItemComponent } from './comp/config/config-item/config-item.component';
+import { SlidesComponent } from './comp/splash/slides/slides.component';
 
 
 @NgModule({
@@ -33,7 +34,7 @@ import { ConfigItemComponent } from './comp/config/config-item/config-item.compo
     SearchBarComponent, 
     SearchResultComponent, 
     SearchPageComponent, 
-    LoadImgDirective, ConfigComponent, ConfigItemComponent,
+    LoadImgDirective, ConfigComponent, ConfigItemComponent, SlidesComponent,
   ],
   imports: [
     BrowserAnimationsModule,

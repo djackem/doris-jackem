@@ -4,13 +4,12 @@ input{
     width: 100%;
 }
 
-
-
-main{
+#main{
     padding: 1rem;
     background-color: aliceblue;
     margin-bottom: 1rem;
     border: 1px solid black;
+    width: 100%;
 }
 
 .buttons{
@@ -28,11 +27,13 @@ main{
     margin-right: auto;
 }
 
-.content{
+#content{
     margin: 1rem 0px;
     display: grid;
-    grid-template-columns: 35% 1fr;
-    gap: 1.5rem;    
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: min-content;
+    gap: 1.5rem;
+    max-width: 100%;
 }
 
 
@@ -48,6 +49,7 @@ main{
 
 
 .attribute-list{
+    max-width: 100%;    
     font-size: 20px;
     display: grid;
     grid-template-columns: min-content 1fr;
@@ -61,16 +63,24 @@ main{
     text-align: right;
 }
 
-.attribute-list textarea{    
-    resize: vertical;
-}
+
 textarea, input[type="text"], select{
     font-family: inherit;
     font-size: inherit;
     padding: 0.2rem;
     border: 2px solid grey;
     border-radius: 3px;
+
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
+textarea{
+    /* max-width: 100%; */
+    word-wrap:break-all;
+    resize: vertical;
+}
+
+
 
 .multiple-images{
     display: flex;
@@ -91,6 +101,7 @@ img{
     margin-top: 0.25rem;
 }
 .link-menu, .links-inner{
+    font-size: 18px;
     margin-top: 0.25rem;
     display: grid;
     grid-template-columns: 120px 1fr 80px;
@@ -105,5 +116,14 @@ img{
     background-color: rgba(0,0,0,0.1);
     text-align: center;
 }
-
+.link-msg{
+    font-size: 14px !important;
+    padding: 0.25rem 0.5rem;
+}
+.link-truncated{
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 

@@ -13,6 +13,7 @@ export class ConfigItemComponent implements OnInit{
   @Output() UpdateJSON = new EventEmitter<any>();  
   @Output() NewItemEmitter = new EventEmitter<any>();
   @Output() DeleteMeEmitter = new EventEmitter<any>();
+
   
   active = false;
   active_char = "+";
@@ -21,6 +22,7 @@ export class ConfigItemComponent implements OnInit{
   link_menu_valid: boolean=false;
   link_menu_text: string = "";
   link_menu_url: string = "";
+  link_delete_key: string = null;
 
   delete_counter: number = 0;
   delete_text: string = "Delete";
@@ -91,8 +93,23 @@ export class ConfigItemComponent implements OnInit{
         "index": this.index,
         "prop": "links",
         "value":links
-      });
+      });    
     }
+  }
+
+  DeleteLink( key: string ){
+    if ( !this.link_delete_key ){
+      this.link_delete_key = key;
+    }else{
+      this.link_delete_key = null;
+      let links = {...this.item.links};
+      delete links[key];   
+      this.UpdateJSON.emit({
+        "index": this.index,
+        "prop": "links",
+        "value": links
+      });
+    }    
   }
 
   // Delete button

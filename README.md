@@ -1,9 +1,13 @@
 # Doris Jackem Personal Site
 https://djackem.github.io/doris-jackem/
-changed 2
 
 This is a json-driven site.
 All items have thier own page and will populate menus and galleries automatically. This enables github to be used on multiple computers and content can be created/read/updated/deleted easily by anyone with no skill required.
+
+# Config Page / JSON Builder
+src/app/comp/config
+
+This page is a very user friendly page to edit the json values and see the images you are working with to make adding and editing easy for someone who sees code (json) and shuts down haha. As of this writing you will have to copy the values and paste into your local repos and push to github to update the site.
 
 ## JSON Config
 **( assets/config.json )**
@@ -33,7 +37,6 @@ The structure of the config items has some required properties for each item and
     ]
 }
 ``````
-* *Properties are case-sensitive*
 ##### Required Properties
 You will need something here for the item to be picked up by the app. If you have a missing value here, the app will substitute "Missing" here unless its an image.
 - **name** The name of the item
@@ -48,21 +51,10 @@ You will need something here for the item to be picked up by the app. If you hav
 - **extra** An extra note
 
 ## Dev Notes
-This is just a notes for me
-
-> cd mom-app
-
-> npm run serve
-
->ng build
-
+##### Web Build
 >npm run web
+/docs
 
-Copy 
-- index.html
-- /assets
-- favicon.ico
-to ../docs
 
 
 
