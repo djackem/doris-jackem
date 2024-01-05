@@ -1,24 +1,21 @@
 {
   "items": [
     {
-      "name": "Bees",
+      "name": "Bee",
       "desc": "A bee\nIts good, OK?\n\nOK.",
       "dim": "3in x 7ft x 9in",
-      "img": "cupcake_3.jpg",
+      "img": "bee_1.jpg",
       "dimensions": "1' 2\"",
+      "category": "Animals"
+    },
+    {
+      "name": "Blue Bear 2",
+      "desc": "A blue bear",
+      "img": "blueBear_2_1.jpg",
       "category": "Animals",
       "imgs": [
-        "cupcake_1.jpg",
-        "cupcake_2.jpg",
-        "cupcake_3.jpg",
-        "cupcake_4.jpg",
-        "cupcake_5.jpg",
-        "cupcakes_1.jpg",
-        "cupcakes_2.jpg"
-      ],
-      "links": {
-        "etsy": "https://stackoverflow.com/questions/5601931/how-do-i-safely-merge-a-git-branch-into-master"
-      }
+        "blueBear_2_2.jpg"
+      ]
     },
     {
       "name": "Blue Cats",
@@ -40,7 +37,7 @@
       "name": "Cupcakes",
       "desc": "Some cupcakes with different decorations",
       "img": "cupcakes_2.jpg",
-      "category": "Animals",
+      "category": "ducks",
       "imgs": [
         "cupcake_1.jpg",
         "cupcake_2.jpg",
@@ -51,12 +48,14 @@
     },
     {
       "name": "Doggy",
-      "desc": "A good boy",
+      "desc": "A good boy!  Will keep you safe from things that go bump in the night.  Eats very little.",
       "img": "doggy_1.jpg",
       "category": "Animals",
       "imgs": [
         "doggy_2.jpg"
-      ]
+      ],
+      "dimensions": "9\" x 7\"",
+      "note": "This particular dog has gone to a good home.  We have several other dogs in our kennel and would love to show them to you if interested."
     },
     {
       "name": "Big Duck",
@@ -105,21 +104,25 @@
     },
     {
       "name": "Blue Fish",
-      "desc": "A blue fish",
+      "desc": "This little guy is a very special fish.  He has the ability to live completely out of water!  He likes to sit on furniture and watch people.",
       "img": "fish_2_1.jpg",
-      "category": "Animals",
+      "category": "Fish",
       "imgs": [
         "fish_2_2.jpg"
-      ]
+      ],
+      "dimensions": "3\" x 4\"",
+      "note": "Soft and ready to be squeezed.  Another property that he possesses is that he does not get hurt with a good grip of the hand!"
     },
     {
       "name": "Gold Bear",
-      "desc": "The golden bear of legend",
+      "desc": "Hello!  My name is Goldie.  I have a lot of family and friends but I would like to come to live with you.  I am relatively small but a good hands worth of warmth.",
       "img": "goldBear_1.jpg",
-      "category": "Animals",
+      "category": "Bears",
       "imgs": [
         "goldBear_2.jpg"
-      ]
+      ],
+      "dimensions": "5\" x 7\"",
+      "note": "Looks good in any decor."
     },
     {
       "name": "Panda Bear",
@@ -151,12 +154,14 @@
     },
     {
       "name": "Reindeer",
-      "desc": "A reindeer",
+      "desc": "Handsome fellow who has been called away by Santa.  Another member of his breed can come to you in a while.",
       "img": "reindeer_1.jpg",
       "category": "Animals",
       "imgs": [
         "reindeer_2.jpg"
-      ]
+      ],
+      "dimensions": "12\" x 8\"",
+      "note": "It is always a good time to look at this little deer.    Order one now!"
     },
     {
       "name": "Yellow Bear A",
@@ -184,12 +189,6 @@
       "imgs": [
         "yellowBear_3_2.jpg"
       ]
-    },
-    {
-      "name": "test",
-      "desc": "aaa",
-      "img": "bee_1.jpg",
-      "category": "witches"
     }
   ]
 }
