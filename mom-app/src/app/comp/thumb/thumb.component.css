@@ -12,7 +12,7 @@
     background-size: cover;
     background-color: #ccc; 
     padding: var(--thumb-padding);
-    border-radius: var(--thumb-padding);
+    border-radius: 2px;
 }
 
 .thumb-title{
@@ -21,7 +21,7 @@
     left: var(--thumb-padding);
     bottom: var(--thumb-padding);
     color: white;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: bold;
     text-shadow: 0px 1px 8px #000;    
 }

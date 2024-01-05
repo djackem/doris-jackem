@@ -13,13 +13,18 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter&family=Poppins:wght@200;500;600&display=swap" rel="stylesheet">
 </head>
-<body>  
+<body>
+  
+  <!-- Load this outside of angular as it does not like it in GitHub pages -->
+  <img class="ghost" src="assets/page-assets/loading.svg">
 
   <div id="loading-app" class="loading-screen">
     Loading App...
   </div>
 
   <app-root></app-root>
+
+  
 
   <script>onload = e => document.getElementById('loading-app').remove();</script>
 

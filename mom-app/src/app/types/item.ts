@@ -1,10 +1,10 @@
 export interface Item {
-    id: number;
+    id?: number;
     name: string;
     category: string;
     desc: string;
     img: string;
-    imgs : string[] | undefined;
+    imgs? : string[];
     dimensions?: string;
     links?: {[key: string]: string};
     note?: string;

@@ -8,8 +8,13 @@ import { Item } from 'src/app/types/item';
 })
 export class ConfigItemComponent implements OnInit{
   @Input() index: number;
-  @Input() item: Item;
+  @Input() item: Item | null;
+  @Input() categories: string[];
   @Output() UpdateJSON = new EventEmitter<any>();  
+  @Output() NewItemEmitter = new EventEmitter<any>();
+  @Output() DeleteMeEmitter = new EventEmitter<any>();
+
+  
   active = false;
   active_char = "+";
   has_images: boolean;
@@ -17,10 +22,18 @@ export class ConfigItemComponent implements OnInit{
   link_menu_valid: boolean=false;
   link_menu_text: string = "";
   link_menu_url: string = "";
+  link_delete_key: string = null;
+
+  delete_counter: number = 0;
+  delete_text: string = "Delete";
 
   ngOnInit(){
     this.has_images = this.item.imgs ? this.item.imgs.length>0 : false;
     this.has_links = this.item.links ? true : false;
+
+    if (this.item == null){
+      this.item = { id:999, name: "", category:"", desc: "", img:"", imgs:[] };
+    }
   }
 
   OpenClick(){
@@ -60,7 +73,7 @@ export class ConfigItemComponent implements OnInit{
   }
 
   CheckLinkMenu(){
-    this.link_menu_valid = this.link_menu_text.length>0 && this.link_menu_url.length>0;    
+    this.link_menu_valid = this.link_menu_text.length>0 && this.link_menu_url.length>0 ;    
   }
 
   CreateLink(){
@@ -80,8 +93,38 @@ export class ConfigItemComponent implements OnInit{
         "index": this.index,
         "prop": "links",
         "value":links
-      });
+      });    
     }
+  }
+
+  DeleteLink( key: string ){
+    if ( !this.link_delete_key ){
+      this.link_delete_key = key;
+    }else{
+      this.link_delete_key = null;
+      let links = {...this.item.links};
+      delete links[key];   
+      this.UpdateJSON.emit({
+        "index": this.index,
+        "prop": "links",
+        "value": links
+      });
+    }    
+  }
+
+  // Delete button
+  ResetDelete(){
+    this.delete_text = `Delete`;
+    this.delete_counter = 0;
+  }
+
+  DeleteMe(){
+    if (++this.delete_counter <= 1){      
+      this.delete_text = `Confirm Delete`;
+    }else{
+      this.DeleteMeEmitter.emit( this.index );
+    }
+    
   }
 
 }

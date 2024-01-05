@@ -69,12 +69,25 @@
     margin: .5rem 1rem;
     font-size: 18px;
 }
-.splash-text p img{
-    float: left;
-    width: 100px;
-    /* aspect-ratio: 1 / 1; */
+
+.splash-text:has(#signature){
+   margin-bottom: 0px;
+}
+#splash-2{
+    margin-top: 0px;
+    background-color: rgba(0,0,0,0.05);
 }
 
+.splash-text p img{
+    float: right;
+    width: clamp(200px, 30%, 500px);
+    /* aspect-ratio: 1 / 1; */
+}
+/* #signature{
+    see above ^
+    position: absolute;
+    width:30%;
+} */
 
 .category-text{
     font-weight: 500;
