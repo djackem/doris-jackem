@@ -159,6 +159,12 @@ export class ConfigComponent implements OnInit {
     navigator.clipboard.writeText(JSON.stringify( this.data_copy, null, 2) );   
   }
 
+  UpdateSiteItems(){
+    this.itemService.SetItems(this.data_copy);
+    navigator.clipboard.writeText(JSON.stringify( this.data_copy, null, 2) );
+    this.output_string = "Copied all items to clipboard and updated site.";
+    this.output_visible = true;
+  }
 
   ////////////// New Item /////////////////////////////////
   SetNewFile($event){
