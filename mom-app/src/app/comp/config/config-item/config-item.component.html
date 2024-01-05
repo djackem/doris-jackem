@@ -28,7 +28,7 @@
     <div id="content" [ngClass]="{'hidden': !active }">
 
         <div class="images">
-            <img [src]="'assets/img/'+ item.img"/><br/>
+            <img [src]="'assets/img/'+item.img"/><br/>
             {{item.img}}<br/><br/>
             
             <!-- Hidden file input (template ref trick) -->
@@ -44,6 +44,8 @@
                 <button
                     (click)="mainImgInput.click()"
                 >Choose Main Image</button>
+
+                <button (click)="PreviewEmitter.emit(item)">Preview Item</button>
 
                 <button
                     (click)="DeleteMe()"
@@ -105,9 +107,7 @@
             <span>Images:</span>
             <div>
                 <div class="multiple-images" *ngIf="has_images; else noImages">
-                    <img *ngFor="let s of item.imgs"
-                        [src]="'assets/img/' + s"
-                    >
+                    <img *ngFor="let s of item.imgs" [src]="'assets/img/'+ s">
                 </div>
                 <ng-template #noImages>No images set yet.<br/></ng-template>
                 

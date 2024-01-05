@@ -30,12 +30,21 @@ export class ItemComponent implements OnInit{
   view:string = 'gallery';
   zoom_url: string | undefined;
 
+  fragment: string = undefined;
+
   constructor( 
     public itemService: ItemsService, 
     private router: Router,
     private route: ActivatedRoute,
     private loadImage: LoadImageService
-  ){}
+  ){    
+    router.events.subscribe( s => {
+      if ( s instanceof NavigationEnd ){
+        const t = router.parseUrl(router.url);
+        this.fragment = t.fragment;
+      }
+    })    
+  }
   
   ngOnInit(){
     this.router.events.pipe( filter( e => e instanceof NavigationEnd ) )

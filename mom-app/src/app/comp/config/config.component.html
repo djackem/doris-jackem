@@ -5,8 +5,8 @@
             <h2><i>SemiStatic®</i></h2>
             <small>JSON Builder</small>
         </div>
-        <button (click)="CopyItems()">Copy Items</button>
         <button (click)="UpdateSiteItems()">Update Site</button>
+        <button (click)="CopyItems()">Copy Items</button>
         <button (click)="show_new_item=!show_new_item">New Item</button>
     </div>
     
@@ -92,13 +92,16 @@
 
     <!---------------------------------------------------------------- Items -->
     <h2>Items</h2>
-    <div *ngFor="let item of items; let i=index">
+    <div *ngFor="let item of items; let i=index"
+        [id]="item.name"
+    >
         <app-config-item *ngIf="item != undefined"
             [item]="item"
             [index]="i"
             [categories]="categories"
             (UpdateJSON)="Update($event)"
             (DeleteMeEmitter)="Delete($event)"
+            (PreviewEmitter)="PreviewItem(item)"
         ></app-config-item>
     </div>
 

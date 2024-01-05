@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Item } from 'src/app/types/item';
 
 @Component({
@@ -12,8 +13,8 @@ export class ConfigItemComponent implements OnInit{
   @Input() categories: string[];
   @Output() UpdateJSON = new EventEmitter<any>();  
   @Output() NewItemEmitter = new EventEmitter<any>();
+  @Output() PreviewEmitter = new EventEmitter<any>();
   @Output() DeleteMeEmitter = new EventEmitter<any>();
-
   
   active = false;
   active_char = "+";
@@ -26,6 +27,7 @@ export class ConfigItemComponent implements OnInit{
 
   delete_counter: number = 0;
   delete_text: string = "Delete";
+
 
   ngOnInit(){
     this.has_images = this.item.imgs ? this.item.imgs.length>0 : false;

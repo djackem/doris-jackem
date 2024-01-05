@@ -16,11 +16,12 @@ export class ItemsService {
   public loading_emitter: EventEmitter<boolean> = new EventEmitter();
   private sub$:Subscription;
   
+  public get Items(){ return this.items };
   public get ItemsByCategory(){ return this.items_by_category};
   public get Data(){ return this.data };
 
   SetItems( data:Object ){
-    this.data = data;
+      this.data = data;
       let id = 0;
       this.items = [];
       this.items_by_category = {};
@@ -38,8 +39,8 @@ export class ItemsService {
             name: item.name || 'Missing',
             desc: item.desc || 'Missing',
             category: item.category || 'Missing',
-            img: `assets/img/${item.img}` || 'Missing',
-            imgs : item.imgs?.map( i => `assets/img/${i}`),
+            img: `${item.img}` || 'Missing',
+            imgs : item.imgs?.map( i => `${i}`),
             dimensions: item.dimensions ? item.dimensions : undefined,
             links: item.links ? item.links : undefined,
             note: item.note ? item.note : undefined,

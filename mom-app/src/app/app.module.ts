@@ -21,6 +21,7 @@ import { LoadImgDirective } from './comp/load-img/load-img.directive';
 import { ConfigComponent } from './comp/config/config.component';
 import { ConfigItemComponent } from './comp/config/config-item/config-item.component';
 import { SlidesComponent } from './comp/splash/slides/slides.component';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -43,7 +44,7 @@ import { SlidesComponent } from './comp/splash/slides/slides.component';
     BrowserModule,
     AppRoutingModule,
     LazyLoadImageModule,
-    KeyValuePipe,
+    KeyValuePipe    
   ],
   providers: [],
   bootstrap: [AppComponent]

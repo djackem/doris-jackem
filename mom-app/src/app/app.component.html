@@ -36,7 +36,9 @@
     </nav>
     
     <div id="content">
-        <router-outlet></router-outlet>
+        <router-outlet
+            (activate)="onRouterActivate($event)"
+        ></router-outlet>
     </div>
 
     <div id="footer" class="stitches">

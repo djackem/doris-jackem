@@ -6,15 +6,8 @@
             [lazyLoad]="zoom_url"
             [defaultImage]="'/assets/img/tester.png'"
             
-        />
-        <!-- <div id="close-btn"
-            class="cursor-pointer"
-            [defaultImage]="'/assets/page-assets/btn_x.svg'"
-            [lazyLoad]="'/assets/page-assets/btn_x.svg'"
-            (click)="onCloseClick()"   
-        ></div> -->
-    </div>  
-    <!-- <h2>Click to Close</h2>   -->    
+        />        
+    </div>     
 </div>
 
 <main>    
@@ -22,11 +15,11 @@
     <div id="side-bar" class="stitches">        
         <button *ngIf="back_url" 
             [routerLink]="back_url"
+            [fragment]="fragment"
             class="nav-button active"
         >Back to {{back_name}}</button>
         
         <div *ngIf="item.note" id="extra-container">
-            <h3>Note:</h3>
             <p>{{ item.note }}</p>
         </div>
         
@@ -54,7 +47,7 @@
             id="main-image"
             class="flex-child clickable"
             (click)="onImageClick($event)"
-            loadImg="{{item.img}}"
+            [loadImg]="'assets/img/'+item.img"
         />  
 
         <div id="desc" *ngIf="item.desc" class="property-container">
@@ -77,7 +70,7 @@
             <img *ngFor="let img of item.imgs"
                 class="cursor-pointer"
                 (click)="onImageClick($event)"
-                [loadImg]="img"
+                [loadImg]="'assets/img/'+img"
                 [useObserver]="false"
                 />
         </div>

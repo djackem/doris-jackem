@@ -23,6 +23,11 @@ export class AppComponent {
     })
   }
 
+  // 
+  onRouterActivate($event){
+    window.scroll({top: 0, left: 0});
+  }
+
   // Shows and hides the loading spinner during RouterEvent changes
   navigationInterceptor(event: RouterEvent): void {
     if (event instanceof NavigationStart) {

@@ -1,4 +1,6 @@
-import { Component, HostListener, OnInit } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { AfterViewChecked, AfterViewInit, Component, HostListener, Inject, OnInit } from '@angular/core';
+import { Router, NavigationEnd, NavigationStart } from '@angular/router';
 import { ItemsService } from 'src/app/serv/items.service';
 import { Item } from 'src/app/types/item';
 
@@ -7,7 +9,7 @@ import { Item } from 'src/app/types/item';
   templateUrl: './config.component.html',
   styleUrls: ['./config.component.css']
 })
-export class ConfigComponent implements OnInit {
+export class ConfigComponent implements OnInit  {
   json_final!:any;
   data_copy!:any;
   items:any = [];
@@ -26,7 +28,31 @@ export class ConfigComponent implements OnInit {
   new_category: string = "";
   categories: string[];
 
-  constructor( public itemService: ItemsService ){}
+  fragment: string = null;
+  constructor( public itemService: ItemsService, public router: Router ){
+    /* router.events.subscribe( s => {
+      if ( s instanceof NavigationEnd ){
+        const t = router.parseUrl(router.url);
+        this.fragment = t.fragment;
+        console.log(t);
+        //if (t.fragment){
+        //  console.log('frag', t.fragment);
+        //  const el = document.getElementById(t.fragment);
+        //  if (el){
+        //    el.scrollIntoView();
+        //    console.log(el)
+        //  } 
+          //this.fragment
+        }
+      }
+    }) */
+  }
+
+  // This uses a timeout to run at the next tick
+  // I had to do this to fire after the view is built 
+  /* ngAfterViewInit(){
+    
+  }  */
   
   // On Scroll, hide output
   @HostListener('window:scroll', ['$event']) // for window scroll events
@@ -35,8 +61,25 @@ export class ConfigComponent implements OnInit {
     }
 
   ngOnInit(){
+
+    // Scroll and Open fragment we saved when previewing
+    const t = this.router.parseUrl(this.router.url);// Get fragment
+    this.fragment = t.fragment;
+    // Next microtask
+    setTimeout( ()=>{
+      if (this.fragment){
+        const item_container = document.getElementById( this.fragment );
+        if (!item_container) return; // Incase we edited, reloaded
+        item_container.scrollIntoView(true);
+        let expand_button = item_container.getElementsByClassName('toggle')[0] as HTMLElement;
+        expand_button.click();        
+      } 
+    }, 0); 
+
     // Copy items from service
     this.data_copy = JSON.parse(JSON.stringify(this.itemService.Data));
+    this.data_copy.items = this.itemService.Items;
+
     this.json_final = JSON.stringify(this.data_copy, null, 2);
     this.categories = [];
     for( let item of this.data_copy["items"]){
@@ -152,11 +195,17 @@ export class ConfigComponent implements OnInit {
     }
   }
 
+  PreviewItem( item: Item ){
+    this.UpdateSiteItems();
+    this.router.navigate([`item/${item.id}`],
+    { queryParams: { refer: '/config/' }, fragment: item.name }
+    );
+  }
 
   CopyItems(){
     this.output_string = "Copied all items to clipboard.";
     this.output_visible = true;
-    navigator.clipboard.writeText(JSON.stringify( this.data_copy, null, 2) );   
+    navigator.clipboard.writeText( JSON.stringify(this.data_copy, null, 2) );   
   }
 
   UpdateSiteItems(){
