@@ -6,7 +6,12 @@
       "dim": "3in x 7ft x 9in",
       "img": "bee_1.jpg",
       "dimensions": "1' 2\"",
-      "category": "Animals"
+      "category": "Animals",
+      "links":{
+        "test": "https://www.google.com",
+        "test2": "https://www.google.com",
+        "test3": "https://www.google.com"
+      }
     },
     {
       "name": "Blue Bear 2",

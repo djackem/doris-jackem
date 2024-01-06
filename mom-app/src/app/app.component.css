@@ -2,7 +2,7 @@
 #content-layout{  
     display: grid;    
     grid-template-rows: auto 1fr 50px;
-    min-height: 100vh;  
+    min-height: 100vh !important;  
 }
 
 /* Mobile */
@@ -20,6 +20,13 @@
 
     #nav-title{
         align-self: center !important;
+    }
+    .top-button{
+        padding: 0.25rem;
+        font-size: 16px;
+    }
+    #footer h3{
+        font-size: 14px;        
     }
 }
 
@@ -58,9 +65,20 @@
         align-content: center; */
         
     }
-    #top-nav > *{
-        flex: 1 1 auto;
+    .top-button{
+        /* width: 200px; */
+        /* flex: 1 1 100px; */
+        padding: 0.25rem 1.5rem;
+        border: 0px;
+        
+        /* width: clamp(20% ,100px) */
     }
+    .top-button:not(.active){
+        background-color: rgba(0,0,0, 0.03);
+    }
+    /* #top-nav > *{
+        flex: 1 1 auto;
+    } */
 
     
 

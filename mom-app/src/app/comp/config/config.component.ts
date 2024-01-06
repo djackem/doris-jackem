@@ -126,7 +126,8 @@ export class ConfigComponent implements OnInit  {
     }
   }
 
-  NewCategory(){    
+  NewCategory(){
+    if (!this.new_category) return;
     this.categories.push(this.new_category);
     this.output_visible = true;
     this.output_string = `Created new category: ${this.new_category}`;

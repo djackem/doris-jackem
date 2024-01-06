@@ -8,15 +8,13 @@
         <button (click)="UpdateSiteItems()">Update Site</button>
         <button (click)="CopyItems()">Copy Items</button>
         <button (click)="show_new_item=!show_new_item">New Item</button>
-    </div>
-    
+    </div>    
 
     <!-------------------------------------------------------- New Item -->
     <div id="new-item" [ngClass]="{'hidden': !show_new_item}">        
         <h3>Create new Item</h3>
 
         <div id="new-item-inner">
-
             <div 
                 id="close" 
                 class="close-btn"
