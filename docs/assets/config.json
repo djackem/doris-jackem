@@ -1,194 +1,260 @@
 {
   "items": [
     {
+      "id": 0,
       "name": "Bee",
-      "desc": "A bee\nIts good, OK?\n\nOK.",
-      "dim": "3in x 7ft x 9in",
+      "desc": "Yellow yarn with black stripes.  Lacy white wings to travel from flower to bush.  Always on the go collecting \npollen for the home unit.  Never complains.  Works very hard.  My stinger is used only when I feel threatened\nby a predator.  I never would use it on you or your family.  I love hugs and sweet things.",
+      "category": "Animals",
       "img": "bee_1.jpg",
-      "dimensions": "1' 2\"",
-      "category": "Animals"
+      "dimensions": "About the size of a softball.",
+      "note": "note",
+      "extra": "My name is Buzz.  I come from a very large family and would love to come to your house.  "
     },
     {
+      "id": 1,
       "name": "Blue Bear 2",
-      "desc": "A blue bear",
-      "img": "blueBear_2_1.jpg",
+      "desc": "Created with soft blue yarn.  Safety eyes make this bear good with children.  Arms and legs are sewn on.  They\ncan be pulled off but it takes strength to do that.  Hugging is encouraged and no rough treatment.  Likes to \nsit on beds and cuddle with people.  Very quiet and easy going.  Enjoys watching people, TV or internet.",
       "category": "Animals",
+      "img": "blueBear_2_1.jpg",
       "imgs": [
         "blueBear_2_2.jpg"
-      ]
+      ],
+      "dimensions": "7\" x 5\"",
+      "note": "My name is Beau.  I would love to meet you at your house.  I am rather small but love hugs and kisses."
     },
     {
+      "id": 2,
       "name": "Blue Cats",
-      "desc": "A blue cat",
+      "desc": "White paws and cute pink nose.  I am small, but love to play with red lasers, string or feathers.  \nSafety eyes make me safe to play with everyone.  I would like to meet you and your family.  Okay???\n\nI love to cuddle and have quite a purr. I don't use my nails to scratch. Enjoy belly rubs and soft food\n",
+      "category": "Cats",
       "img": "blueCat_1.jpg",
-      "category": "Animals"
+      "dimensions": "6\" x 4\"",
+      "links": {
+        "Buy on Etsy": "dfsdsdf"
+      },
+      "extra": "I love to cuddle and have quite a purr.  I don't use my nails to scratch.  Enjoy belly rubs and soft food"
     },
     {
+      "id": 3,
       "name": "Bunny",
-      "desc": "A bunny with a carrot",
-      "img": "bunny_1.jpg",
+      "desc": "Hoppy is made of soft white yarn and he has a soft fluffy tail.  Comes from a very large family and loves fresh\nvegetables and many garden greens.  Can squeeze through tight spaces under fences.  (Learned that from\nmy mama).  Quick runner and hops away when scared or startled.",
       "category": "Animals",
+      "img": "bunny_1.jpg",
       "imgs": [
         "bunny_2.jpg",
         "bunny_3.jpg"
-      ]
+      ],
+      "note": "Hoppy has been sold.  A brother or sister could come instead!",
+      "extra": "I would like to come and meet your family.  Dinner?  Yes.  I would love to eat some of your cooked carrots!"
     },
     {
+      "id": 4,
       "name": "Cupcakes",
-      "desc": "Some cupcakes with different decorations",
+      "desc": "Fiber filled crocheted cupcakes.  Uniquely decorated with small beads.  Actually, they are not to eat.\nYummy cupcakes are the disguise of a pin cushion.  So if you like to sew or know someone who likes\nto use pins on crafts, this would be a good no calorie gift for them!",
+      "category": "Animals",
       "img": "cupcakes_2.jpg",
-      "category": "ducks",
       "imgs": [
         "cupcake_1.jpg",
         "cupcake_2.jpg",
         "cupcake_3.jpg",
         "cupcake_4.jpg",
         "cupcake_5.jpg"
-      ]
+      ],
+      "note": "Do not let friends or family pick up these cupcakes!  They are sticky!!!",
+      "extra": "Any color or style of pins can be used in these noncaloric items.  Funny spoof!!"
     },
     {
+      "id": 5,
       "name": "Doggy",
-      "desc": "A good boy!  Will keep you safe from things that go bump in the night.  Eats very little.",
+      "desc": "A good boy!  Will keep you safe from things that go bump in the night.  Eats very little.  Will patiently wait\nfor you to come home from school or work every day.  Likes long walks as long as you take him on a leash!",
+      "category": "Dogs",
       "img": "doggy_1.jpg",
-      "category": "Animals",
       "imgs": [
         "doggy_2.jpg"
       ],
       "dimensions": "9\" x 7\"",
-      "note": "This particular dog has gone to a good home.  We have several other dogs in our kennel and would love to show them to you if interested."
+      "note": "This particular dog has gone to a good home. ",
+      "extra": " We have several other dogs in our kennel and would love to show them to you if interested."
     },
     {
+      "id": 6,
       "name": "Big Duck",
-      "desc": "A duck lady",
-      "img": "duck_1.jpg",
+      "desc": "Yellow with stylish blue dress.  This duck has very large eyes - the better to see you with!  She likes to sit on \nshelves or rest on beds until you return to her.",
       "category": "Animals",
+      "img": "duck_1.jpg",
       "imgs": [
         "duck_2.jpg"
-      ]
+      ],
+      "note": "This item has gone to a home already.  There are others available for adoption in my website.",
+      "extra": "She does not swim.  So please don't take her into the bath.  Thanks!"
     },
     {
+      "id": 7,
       "name": "Duckling",
-      "desc": "A baby duck",
-      "img": "duck_2_1.jpg",
+      "desc": "One of a multiple eggs which were laid by her mother.  Dana the duck is ready to leave the nest and come \nhome with you.  ",
       "category": "Animals",
+      "img": "duck_2_1.jpg",
       "imgs": [
         "duck_2_2.jpg"
-      ]
+      ],
+      "note": "Fiber filled and could go into a bath situation, but will need to dry for some time before playing.  Safety eyes.",
+      "extra": "Young duck who is very curious.  Dana would like to come home and see your friends and family."
     },
     {
+      "id": 8,
       "name": "Tiny Duck",
-      "desc": "A tiny duck",
-      "img": "duck_3_1.jpg",
+      "desc": "Cute little duck who is blue and white.  She has blue eyes and would love to see you in person.  Very quiet\nand curious.  Enjoys family dinners and movies.  Her name is Donna.",
       "category": "Animals",
+      "img": "duck_3_1.jpg",
       "imgs": [
         "duck_3_2.jpg"
-      ]
+      ],
+      "dimensions": "Size of tennis ball",
+      "note": "Small but very loving.  Do you have room in your house, apartment or condo for Donna??",
+      "extra": "Donna is waiting for you to adopt her.  Are you willing???  "
     },
     {
+      "id": 9,
       "name": "White and Blue Fish",
-      "desc": "A blue and white fish",
+      "desc": "Oscar is looking for a new home.  He is tired of the aquarium where he lived for a few years.  He is \ncomfortable living on a shelf.  Oscar is loving as far as fish go.  He will stay where placed until you\nreturn to him.",
+      "category": "Fish",
       "img": "fish_1.jpg",
-      "category": "Animals",
       "imgs": [
         "fish_2.jpg"
-      ]
+      ],
+      "dimensions": "4\" x 2\"",
+      "note": "Very low maintenance.  Ready to meet you!!",
+      "extra": "Oscar is a fish out of water who does fine.  Do you have room for him?"
     },
     {
+      "id": 10,
       "name": "Blue Fish",
-      "desc": "A blue fish",
+      "desc": "Another aquatic choice!  Barney is a blue goldfish.  He is very rare and is looking for someone who likes\nunique things.  He likes to sit on shelves, preferably in a bathroom or shower.  Can get wet but will need\nsome time to dry off before going to a shelf or bed.",
+      "category": "Fish",
       "img": "fish_2_1.jpg",
-      "category": "Animals",
       "imgs": [
         "fish_2_2.jpg"
-      ]
+      ],
+      "note": "Aquariums are nice but they are hard to keep clean.  Barney is always there for you!",
+      "extra": "Barney sits up proud on a shelf!  He is a good alternative to live goldfish.  He will never need to see the inside of the toilet"
     },
     {
+      "id": 11,
       "name": "Blue Fish",
-      "desc": "This little guy is a very special fish.  He has the ability to live completely out of water!  He likes to sit on furniture and watch people.",
-      "img": "fish_2_1.jpg",
+      "desc": " Barney is a blue goldfish.  He is very rare and is looking for someone who likes unique things. \n He likes to sit on shelves, preferably in a bathroom or shower.",
       "category": "Fish",
+      "img": "fish_2_1.jpg",
       "imgs": [
         "fish_2_2.jpg"
       ],
       "dimensions": "3\" x 4\"",
-      "note": "Soft and ready to be squeezed.  Another property that he possesses is that he does not get hurt with a good grip of the hand!"
+      "note": "Soft and ready to be squeezed.  Another property that he possesses is that he does not get hurt with a good grip of the hand!",
+      "extra": "This little guy is a very special fish.  He has the ability to live completely out of water!  He likes to sit on furniture and watch people."
     },
     {
+      "id": 12,
       "name": "Gold Bear",
-      "desc": "Hello!  My name is Goldie.  I have a lot of family and friends but I would like to come to live with you.  I am relatively small but a good hands worth of warmth.",
-      "img": "goldBear_1.jpg",
+      "desc": "Hello!  My name is Goldie.  I have a lot of family and friends but I would like to come to live with you. \n I am relatively small but a good hands worth of warmth.  I like movies and long walks.",
       "category": "Bears",
+      "img": "goldBear_1.jpg",
       "imgs": [
         "goldBear_2.jpg"
       ],
       "dimensions": "5\" x 7\"",
-      "note": "Looks good in any decor."
+      "note": "Looks good in any decor.  She stands out in many environments.",
+      "extra": "Goldie is a very good friend to her owner."
     },
     {
+      "id": 13,
       "name": "Panda Bear",
-      "desc": "A panda bear",
+      "desc": "Peter is a panda who is ready for adoption.  He is a loving bear and wants to see you and get some hugs.\nPeter will keep you company on long nights or watch TV with you while you play video games.  He is a big\nguy who needs a friend to take care of him and talk to him.  He is a good listener.",
+      "category": "Bears",
       "img": "panda_1.jpg",
-      "category": "Animals",
       "imgs": [
         "panda_2.jpg",
         "panda_3.jpg"
-      ]
+      ],
+      "dimensions": "11\" x 11\"",
+      "note": "Peter has gone to a home in NC.  You can order another panda to take his place!",
+      "extra": "Necktie can be added for more color to fit into your decor."
     },
     {
+      "id": 14,
       "name": "Pink Bear",
-      "desc": "A pink bear",
+      "desc": "Penny is a pink bear who would love to meet you or your daughter.  She plays well with others and is very\nquiet.  A scarf will be added before adoption to complete her look.",
+      "category": "Bears",
       "img": "pinkBear_1.jpg",
-      "category": "Animals",
       "imgs": [
         "pinkBear_2.jpg"
-      ]
+      ],
+      "dimensions": "8\" x 4\"",
+      "note": "Penny is a devoted friend who will not leave you or your family.",
+      "extra": "Can you make room for Penny?  She will patiently wait to hear from you!"
     },
     {
+      "id": 15,
       "name": "Pink Cat",
-      "desc": "A pink cat",
+      "desc": "Pat is a pink cat who is looking for a new home.  She has white paws and is a medium pink color.  A ribbon\nwill be added to her neckline before adoption.  Pat is ready to go!!",
+      "category": "Cats",
       "img": "pinkCat_1.jpg",
-      "category": "Animals",
       "imgs": [
         "pinkCat_2.jpg"
-      ]
+      ],
+      "dimensions": "4\" x 5\"",
+      "note": "Please consider Pat the Cat to come home with you.  She is very sweet!",
+      "extra": "Purrs loudly when petted.  Loves warm places and playing hide & seek."
     },
     {
+      "id": 16,
       "name": "Reindeer",
-      "desc": "Handsome fellow who has been called away by Santa.  Another member of his breed can come to you in a while.",
-      "img": "reindeer_1.jpg",
+      "desc": "Randy is a reindeer who lives at the North Pole.  Randy is close friends with Vixen.  He is used to cold\n temperatures but prefers to stay inside where it  is warm.  ",
       "category": "Animals",
+      "img": "reindeer_1.jpg",
       "imgs": [
         "reindeer_2.jpg"
       ],
       "dimensions": "12\" x 8\"",
-      "note": "It is always a good time to look at this little deer.    Order one now!"
+      "note": "This reindeer has left this site because Santa needed him.   Order a replacement now!",
+      "extra": "It is always a good time to look at this little deer.   He brings a smile to your face when you look at him. "
     },
     {
+      "id": 17,
       "name": "Yellow Bear A",
-      "desc": "A yellow bear",
+      "desc": "Brian is a handsome teddy bear who is tan in color.  He has been in the sun and his fur has darkened to a\nmellow color.  He is very soft and cuddly.",
+      "category": "Bears",
       "img": "yellowBear_1.jpg",
-      "category": "Animals",
       "imgs": [
         "yellowBear_2.jpg"
-      ]
+      ],
+      "dimensions": "10\" x 10\"",
+      "note": "Brian is ready for you to adopt him.  He is a good boy who is very quite and likes lying around and sleeping.",
+      "extra": "Faithful and will stay where you put or take him."
     },
     {
+      "id": 18,
       "name": "Yellow Bear B",
-      "desc": "A yellow bear",
+      "desc": "Sunshine is a big teddy bear.  She is very soft and looking forward to meeting you and your family.  She likes\nto go to tea parties and watch while you have your hair styled or nails painted in pretty colors.",
+      "category": "Bears",
       "img": "yellowBear_2_1.jpg",
-      "category": "Animals",
       "imgs": [
         "yellowBear_2_2.jpg"
-      ]
+      ],
+      "dimensions": "10\" x 9\"",
+      "note": "Sunshine is a cheerful color.  She is a good listener and will always stay by your side.",
+      "extra": "Sunshine likes to sit on beds or rest of sofas."
     },
     {
+      "id": 19,
       "name": "Yellow Bear Small",
-      "desc": "A small yellow bear",
+      "desc": "Berry is a young bear who is looking for someone to take care of him.  He recently left his family unit and is \nbranching out on his own.  He is comfortable in quiet or noisy environments.  He has safety eyes to keep\nhimself seeing clearly and others safe.",
+      "category": "Bears",
       "img": "yellowBear_3_1.jpg",
-      "category": "Animals",
       "imgs": [
         "yellowBear_3_2.jpg"
-      ]
+      ],
+      "dimensions": "5\" x 4\"",
+      "note": "Berry is ready to come home with you.  Can you make room for him?  He is small and doesn't take up much room.",
+      "extra": "Berry is a cute addition to any room, couch or bed.  His yellow color is bright and keeps all smiling."
     }
   ]
 }
