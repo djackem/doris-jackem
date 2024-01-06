@@ -72,10 +72,12 @@
 
 .splash-text:has(#signature){
    margin-bottom: 0px;
+   padding-bottom: 0px;
 }
 #splash-2{
     margin-top: 0px;
-    background-color: rgba(0,0,0,0.05);
+    background-color: var(--header-color);
+    border-radius: 5px;
 }
 
 .splash-text p img{
@@ -95,20 +97,26 @@
 }
 
 #link-gallery{
+    margin-top: 0.75rem;
     display: flex;
     flex-flow: row wrap;
-    gap: 1rem;
+    gap: 1.5rem;
     justify-content: space-evenly;
     padding: 0.5rem 1rem;
 }
 
-#link-gallery > *{
+#link-gallery > a{
     padding: 1rem 2rem;
     text-align: center;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 22px;
+    font-weight: bold;
     background-color: var(--button-active-color);
     flex: 1 1 auto;
+    border-radius: 5px;
+    border-color: rgba(255,255,255, 0.5);
+}
+.splash-small{
+    font-size: 16px !important;
 }
 
 @media only screen and (max-width: 600px) {
