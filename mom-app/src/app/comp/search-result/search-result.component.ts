@@ -5,7 +5,7 @@ import { SearchResult } from 'src/app/types/SearchResult';
   selector: 'app-search-result',
   template: `
     <div class="search-result-container">
-      <img *ngIf="data.item" [loadImg]="data.item.img" />
+      <img *ngIf="data.item" [loadImg]="'assets/img/'+data.item.img" />
       <div>
         <h4>{{ data.text }}</h4>
         <small *ngIf="data.desc">{{ data.desc }}</small>

@@ -67,6 +67,10 @@ pre{
 .flex-child{
   flex: 1 1 auto;
 }
+.sticky{
+  position: sticky;
+  top: 1rem;
+}
 
 .bold-first::first-line{
   font-weight: 600;
@@ -81,12 +85,11 @@ button, input[type="file"]{
   background-color: inherit;
   border-radius: 0.5rem;
   font-family: 'Poppins', sans-serif;
-  /* color: #5b5b5b; */
   font-size: 18px;
   font-weight: 600;
   transition: all 600ms;
   cursor: pointer;
-  letter-spacing: -0.01rem;  
+  letter-spacing: -0.01rem; 
 }
 
 button.active{
