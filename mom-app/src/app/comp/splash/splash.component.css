@@ -123,11 +123,20 @@
     .splash-text{
         padding: 0.5rem;
     }
-    #bust{
-        width: 100%;
+    #bust, #tree{
+        width: 100% !important;
+    }
+    #tree{
+        margin: 1rem 0 1rem 0 !important;
     }
 }
 
 #bust{
 
+}
+#tree{
+    float: left;
+    margin: 1rem 1rem 1rem 0;
+    width: clamp(100px, 20%, 300px);
+    bottom: 0px;
 }
