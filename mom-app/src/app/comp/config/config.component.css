@@ -154,3 +154,24 @@ input, textarea{
 #new-item-inner > textarea{
     resize: vertical;
 }
+
+@media screen and (max-width: 600px) {
+    #title-text{
+       /*  margin-left: auto; */
+        width: 100%;
+    }
+    #title{
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    #new-cat{
+        margin: 0.5rem 0;
+        flex-direction: column;
+    }
+    #new-cat input{
+        width: 100%;
+        margin: 0.5rem;
+        border: 1px solid black;
+    }
+}

@@ -37,7 +37,6 @@ input{
     max-width: 100%;
 }
 
-
 .images{    
     font-size: 16px;
 }
@@ -47,7 +46,6 @@ input{
     gap: 0.5rem;
     justify-content: space-around;
 }
-
 
 .attribute-list{
     max-width: 100%;    
@@ -64,7 +62,6 @@ input{
     text-align: right;
 }
 
-
 textarea, input[type="text"], select{
     font-family: inherit;
     font-size: inherit;
@@ -80,8 +77,6 @@ textarea{
     word-wrap:break-all;
     resize: vertical;
 }
-
-
 
 .multiple-images{
     display: flex;
@@ -128,3 +123,13 @@ img{
     text-overflow: ellipsis;
 }
 
+@media screen and (max-width: 600px) {
+    #content{
+        grid-template-columns: 1fr;
+        grid-template-rows: min-content min-content;
+    }
+    #title-text{
+        display: flex;
+        flex-direction: column;
+    }
+}
