@@ -100,7 +100,7 @@ img{
     font-size: 18px;
     margin-top: 0.25rem;
     display: grid;
-    grid-template-columns: 120px 1fr 80px;
+    grid-template-columns: 1fr 2fr min-content;
     gap: 0.25rem;
 }
 
@@ -131,5 +131,6 @@ img{
     #title-text{
         display: flex;
         flex-direction: column;
-    }
+    }   
+    
 }
