@@ -74,15 +74,17 @@
         
     }
     .top-button{
-        /* width: 200px; */
-        /* flex: 1 1 100px; */
-        padding: 0.25rem 1.5rem;
+        background-color: rgba(0,0,0,0);
+        color: rgba(0,0,0,0.6);
+        font-weight: 600;
         border: 0px;
         
         /* width: clamp(20% ,100px) */
     }
-    .top-button:not(.active){
-        background-color: rgba(0,0,0, 0.03);
+    .top-button.active{
+        color: rgba(0,0,0,1);
+        font-weight: bolder;
+        /* font-size: 19px; */
     }
     /* #top-nav > *{
         flex: 1 1 auto;
