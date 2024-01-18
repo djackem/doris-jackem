@@ -17,13 +17,13 @@
 
                 <button class="top-button active"                    
                     [routerLink]="['/home']" 
-                    routerLinkActive="active"
+                    [routerLinkActive]="'active'"
                 >Home</button>
     
                 <button class="top-button"                
-                    [routerLink]="['/category']" 
-                    routerLinkActive="active"
-                >Categories</button>            
+                    [routerLink]="['/category/']" 
+                    [routerLinkActive]="'active'"
+                >Categories</button>
             </div>
         </div>  
 
@@ -41,8 +41,8 @@
 
     <div id="footer" class="stitches">
         <div id="socials">
-            <a href="https://www.facebook.com"><img [lazyLoad]="'assets/page-assets/logo_fb.svg'"/></a>
-            <a href="https://www.etsy.com"><img [lazyLoad]="'assets/page-assets/logo_etsy.svg'"/></a>
+            <a href="https://www.facebook.com/profile.php?id=100067486194405"><img [lazyLoad]="'assets/page-assets/logo_fb.svg'"/></a>
+            <a href="https://www.etsy.com/shop/CraftsbyDorisUS?ref=profile_header"><img [lazyLoad]="'assets/page-assets/logo_etsy.svg'"/></a>
         </div>
         <div id="semi-link" class="splash-text">
             <p>This site is powered by<br/><a
