@@ -132,6 +132,7 @@ main > *{
     border-radius: 0.5rem;
     font-family: 'Poppins', sans-serif;
     border-color: white;
+    font-size: 18px;
     background-color: var(--button-active-color);
 }
 

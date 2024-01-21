@@ -8,7 +8,7 @@ import { SearchResult } from 'src/app/types/SearchResult';
       <img *ngIf="data.item" [loadImg]="'assets/img/'+data.item.img" />
       <div>
         <h4>{{ data.text }}</h4>
-        <small *ngIf="data.desc">{{ data.desc }}</small>
+        <div id="small" *ngIf="data.desc">{{ Desc }}</div>
       </div>
     </div>
   `,
@@ -16,4 +16,15 @@ import { SearchResult } from 'src/app/types/SearchResult';
 })
 export class SearchResultComponent {
   @Input() data!: SearchResult;
+  
+  public get Desc(){
+    if (this.data.desc.length<130){
+      return this.data.desc;
+    }else{
+      let d = this.data.desc.slice(0, 130).trim();
+      if (d.length < this.data.desc.length) d += "...";
+      return d;
+    }
+    
+  }
 }
