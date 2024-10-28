@@ -62,7 +62,6 @@ export class ItemsService {
         this.loading_emitter.emit( true ); */
       }
   }
-
   
   constructor( http: HttpClient ) { 
     this.sub$ = http.get(this.url).subscribe( data => {
@@ -71,49 +70,8 @@ export class ItemsService {
 
       // Finished loading json
       this.loading = false;
-      this.loading_emitter.emit( true );
-
-      /* this.data = data;
-      let id = 0;
-
-      // Structure check
-      if ( !this.data.hasOwnProperty('items') ){
-        console.error(`Data file does not have items prop: ${data}`);
-        return;
-      }else{
-
-        // Build item array
-        for (let item of this.data.items ){ 
-          const new_item: Item = {
-            id: id++,
-            name: item.name || 'Missing',
-            desc: item.desc || 'Missing',
-            category: item.category || 'Missing',
-            img: `assets/img/${item.img}` || 'Missing',
-            imgs : item.imgs?.map( i => `assets/img/${i}`),
-            dimensions: item.dimensions ? item.dimensions : undefined,
-            links: item.links ? item.links : undefined,
-            note: item.note ? item.note : undefined,
-            extra: item.extra ? item.extra : undefined
-          }
-
-          // Add to category register
-          if ( !this.items_by_category.hasOwnProperty( item.category ) ){
-             this.items_by_category[ item.category ] = [];
-          }
-          this.items_by_category[item.category].push( new_item );
-
-          // Add to items
-          this.items.push( new_item );
-        }
-
-        // Finished loading json
-        this.loading = false;
-        this.loading_emitter.emit( true );
-      } */
-      
+      this.loading_emitter.emit( true );      
     });
-    //console.log(this.items_by_category)
   }
 
   get categories(): string[] {

@@ -100,7 +100,10 @@ button, input[type="file"]{
   font-weight: 600;
   transition: all 600ms;
   cursor: pointer;
-  letter-spacing: -0.01rem; 
+  letter-spacing: -0.01rem;
+  margin: 0px;
+  color: black;
+  
 }
 
 button.active{
@@ -173,4 +176,10 @@ button.active{
   font-size: inherit;
   border: 1px solid black;
   outline: none;
+}
+
+input{
+  background-color: white;
+  color: black;
+  font-weight: normal;
 }

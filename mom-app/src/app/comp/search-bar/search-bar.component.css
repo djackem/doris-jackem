@@ -5,6 +5,8 @@ li{ list-style-type: none; }
 
 main{ position: relative;}
 
+
+
     #search-bar-container{
         width: 100%;
         padding: var(--padd);
@@ -15,16 +17,18 @@ main{ position: relative;}
         font-size: 14px;
         font-weight: 500 !important;        
         padding: 0.5rem;
-        border: 2px solid black;
+        border: 2px solid #ccc;
         border-radius: 0px;
     }
     #search-field{
         flex: 1 1 0px;
         min-width: 0;
         outline: none;
+        border-radius: 0px;
         border-right-width: 0px !important;
         border-top-left-radius: 0.35rem !important;
         border-bottom-left-radius: 0.35rem !important;
+        margin-right: -2px;
     }
     #search-field.errors{
         border-color: red !important;
@@ -54,7 +58,8 @@ main{ position: relative;}
 
 
 /************ Results ****************/
-#search-results{   
+#search-results{
+    z-index: -10;
     transform-origin: left top;
     border-bottom-left-radius: .75rem;
     border-bottom-right-radius: .75rem;
@@ -63,11 +68,11 @@ main{ position: relative;}
     border-top-width: 0px;
     padding: var(--padd);
     position: absolute;
-    top: calc( 100% + 2px );/* calc( 100% - var(--padd) ); */
+    top: calc( 100% - var(--padd) - 3px); 
     left: calc( var(--padd) + 4px);
     width: calc( 100% - 2rem - 8px );
     /* background: linear-gradient( rgba(230, 230, 230, 1),rgba(230, 230, 230, 1) ); */
-    background-color: white;
+    background-color: rgb(247, 247, 247);
     box-shadow: 
         rgba(0,0,0, 0.2) -3px 1px 4px,
         rgba(0,0,0, 0.2) 1px 3px 4px;
