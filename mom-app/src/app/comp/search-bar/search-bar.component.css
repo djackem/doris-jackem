@@ -17,7 +17,7 @@ main{ position: relative;}
         font-size: 14px;
         font-weight: 500 !important;        
         padding: 0.5rem;
-        border: 2px solid #ccc;
+        border: 3px solid #b3b3b3;
         border-radius: 0px;
     }
     #search-field{
@@ -69,8 +69,8 @@ main{ position: relative;}
     padding: var(--padd);
     position: absolute;
     top: calc( 100% - var(--padd) - 3px); 
-    left: calc( var(--padd) + 4px);
-    width: calc( 100% - 2rem - 8px );
+    left: calc( var(--padd) + 5px);
+    width: calc( 100% - 2rem - 10px );
     /* background: linear-gradient( rgba(230, 230, 230, 1),rgba(230, 230, 230, 1) ); */
     background-color: rgb(247, 247, 247);
     box-shadow: 
