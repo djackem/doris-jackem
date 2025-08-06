@@ -34,7 +34,7 @@
         text-align: center;       
     }
     #semi-link{
-        margin-right: 0 !important;
+        margin: 0 !important;
     }
 }
 
@@ -130,6 +130,7 @@
 #content{
     background-color: white;
     min-height: 100%;
+    padding: 0;
 }
 
 #footer{
@@ -144,7 +145,8 @@
 
 #semi-link{
     font-size: 8px;
-    /* margin-right: 2rem; */
+    margin-left: auto;
+    margin-right: 2rem;
     background-color: rgba(0,0,0, 0.1);
     padding: 0.25rem 0.5rem;
     border-radius: 3px;
@@ -157,7 +159,6 @@
 }
 
 #socials{
-    /* margin-right: auto; */
     display: flex;
     gap: 0.5rem;
 }

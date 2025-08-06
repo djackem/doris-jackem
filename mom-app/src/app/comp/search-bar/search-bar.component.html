@@ -39,10 +39,10 @@
         <!-- No Errors - the results -->
         <div *ngIf="!errors; else error">
 
-            <ng-template #nosearch>No results found.</ng-template>
+            <ng-template #nosearch><p class="bolded">No results found.</p></ng-template>
 
             <div *ngIf="results.length>0; else nosearch">
-                <p>Top results results for: {{ search_string }}</p><br/>
+                <div>Top results results for: <span class="bolded">"{{ search_string }}"</span></div><br/>
                 <ul>
                     <li *ngFor="let result of results; index as i">
                         <a *ngIf="i < 6"
