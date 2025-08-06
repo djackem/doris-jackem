@@ -253,11 +253,17 @@
         "yellowBear_3_2.jpg"
       ],
       "dimensions": "5\" x 4\"",
-      "links": {
-        "Buy on Etsy": "https://craftsbydorisus.etsy.com/listing/1662594787/yellow-bear"
-      },
       "note": "Berry is ready to come home with you.  Can you make room for him?  He is small and doesn't take up much room.",
       "extra": "Berry is a cute addition to any room, couch or bed.  His yellow color is bright and keeps all smiling."
+    },
+    {
+      "name": "Alpaca",
+      "desc": "a",
+      "img": "Alpaca.jpg",
+      "category": "Animals",
+      "imgs": [
+        "Alpaca Family.jpg"
+      ]
     }
   ]
 }
